@@ -13,7 +13,7 @@
 - [ ] Singly Linked List (C201)
   - [X] function List_Init()
     - [X] test#01 test_init
-  - [ ] function List_IsActive()
+  - [X] function List_IsActive()
     - [ ] test#11 test_is_active
   - [ ] function List_GetValue()
     - [ ] test#05 test_get_value_inactive

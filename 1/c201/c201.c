@@ -196,8 +196,7 @@ void List_Next(List *list) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 int List_IsActive(List *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
-	return 0;
+	return list->activeElement != NULL;
 }
 
 /* Konec c201.c */
