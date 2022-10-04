@@ -48,7 +48,7 @@
 
 #include "c201.h"
 
-#include <stdio.h> // printf
+#include <stdio.h>	// printf
 #include <stdlib.h> // malloc, free
 
 int error_flag;
@@ -72,7 +72,7 @@ void List_Error() {
  *
  * @param list Ukazatel na strukturu jednosměrně vázaného seznamu
  */
-void List_Init( List *list ) {
+void List_Init(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -83,7 +83,7 @@ void List_Init( List *list ) {
  *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  **/
-void List_Dispose( List *list ) {
+void List_Dispose(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -95,7 +95,7 @@ void List_Dispose( List *list ) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Hodnota k vložení na začátek seznamu
  */
-void List_InsertFirst( List *list, int data ) {
+void List_InsertFirst(List *list, int data) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -105,7 +105,7 @@ void List_InsertFirst( List *list, int data ) {
  * zda je seznam list prázdný.
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
-void List_First( List *list ) {
+void List_First(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -116,7 +116,7 @@ void List_First( List *list ) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
-void List_GetFirst( List *list, int *dataPtr ) {
+void List_GetFirst(List *list, int *dataPtr) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -127,7 +127,7 @@ void List_GetFirst( List *list, int *dataPtr ) {
  *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
-void List_DeleteFirst( List *list ) {
+void List_DeleteFirst(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -138,7 +138,7 @@ void List_DeleteFirst( List *list ) {
  *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
-void List_DeleteAfter( List *list ) {
+void List_DeleteAfter(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -151,7 +151,7 @@ void List_DeleteAfter( List *list ) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Hodnota k vložení do seznamu za právě aktivní prvek
  */
-void List_InsertAfter( List *list, int data ) {
+void List_InsertAfter(List *list, int data) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -162,7 +162,7 @@ void List_InsertAfter( List *list, int data ) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
-void List_GetValue( List *list, int *dataPtr ) {
+void List_GetValue(List *list, int *dataPtr) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -173,7 +173,7 @@ void List_GetValue( List *list, int *dataPtr ) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Nová hodnota právě aktivního prvku
  */
-void List_SetValue( List *list, int data ) {
+void List_SetValue(List *list, int data) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -184,7 +184,7 @@ void List_SetValue( List *list, int data ) {
  *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
-void List_Next( List *list ) {
+void List_Next(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -194,7 +194,7 @@ void List_Next( List *list ) {
  *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
-int List_IsActive( List *list ) {
+int List_IsActive(List *list) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 	return 0;
 }
