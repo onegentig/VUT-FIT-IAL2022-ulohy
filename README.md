@@ -11,8 +11,8 @@
 ❎ Означи чест како готову **аж когды изступ теста будут сєдєти!**
 
 - [ ] Singly Linked List (C201)
-  - [ ] function List_Init()
-    - [ ] test#01 test_init
+  - [X] function List_Init()
+    - [X] test#01 test_init
   - [ ] function List_IsActive()
     - [ ] test#11 test_is_active
   - [ ] function List_GetValue()
