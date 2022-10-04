@@ -97,13 +97,16 @@ void List_Dispose(List *list) {
  * @param data Hodnota k vložení na začátek seznamu
  */
 void List_InsertFirst(List *list, int data) {
+	// Alokácia pamäte pre nový prvok
 	ListElementPtr element = (ListElementPtr)malloc(sizeof(struct ListElement));
 	if (element == NULL) {
 		List_Error();
 		return;
 	}
-	
+
+	// Vloženie hodnoty premennej 'data' do nového prvku
 	element->data = data;
+	// Vloženie nového prvku na začiatok zoznamu
 	element->nextElement = list->firstElement;
 	list->firstElement = element;
 }
@@ -126,11 +129,13 @@ void List_First(List *list) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void List_GetFirst(List *list, int *dataPtr) {
+	// Kontrola, či je zoznam neprázdny
 	if (list->firstElement == NULL) {
 		List_Error();
 		return;
 	}
 
+	// Vloženie ukazateľa na hodnotu prvého prvku do premennej 'dataPtr'
 	*dataPtr = list->firstElement->data;
 }
 
