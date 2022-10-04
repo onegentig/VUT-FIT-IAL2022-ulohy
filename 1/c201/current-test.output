@@ -11,6 +11,7 @@ Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 
 
 [test_first_empty] Aktivace prvního prvku v prázdném seznamu
@@ -52,6 +53,7 @@ Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 Returned value : 22001
 
 

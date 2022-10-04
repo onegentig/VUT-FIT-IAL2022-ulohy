@@ -118,7 +118,12 @@ void List_First(List *list) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void List_GetFirst(List *list, int *dataPtr) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	if (list->firstElement == NULL) {
+		List_Error();
+		return;
+	}
+
+	*dataPtr = list->firstElement->data;
 }
 
 /**

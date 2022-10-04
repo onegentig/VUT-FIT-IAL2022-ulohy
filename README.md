@@ -25,8 +25,8 @@
     - [ ] test#04 test_insert_first
   - [ ] function List_First()
     - [ ] test#03 test_first_empty
-  - [ ] function List_GetFirst()
-    - [ ] test#02 test_get_first_empty
+  - [X] function List_GetFirst()
+    - [X] test#02 test_get_first_empty
     - [ ] test#08 test_get_first
   - [ ] function List_Next()
     - [ ] test#07 test_next_inactive
