@@ -4,82 +4,82 @@ C201 - Linked List, Basic Tests
 [test_init] Inicializace struktury
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_get_first_empty] Získání hodnoty prvního prvku v prázdném seznamu
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_first_empty] Aktivace prvního prvku v prázdném seznamu
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
-Active element : 1244558016
+Active element : not initialised (no item is active)
+Active element : not initialised (no item is active)
 
 
 [test_insert_first] Vkládání nových prvků na první místo
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_get_value_inactive] Získání hodnoty prvku v seznamu bez aktivního prvku
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_set_value_inactive] Aktualizace hodnoty prvku v seznamu bez aktivního prvku
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_next_inactive] Aktivace následujícího prvku v seznamu bez aktivního prvku
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
-Active element : 1244558016
+Active element : not initialised (no item is active)
+Active element : not initialised (no item is active)
 
 
 [test_get_first] Získání hodnoty prvního prvku
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
-Returned value : 22013
+Active element : not initialised (no item is active)
+Returned value : 22001
 
 
 [test_get_value] Získání hodnot aktivních prvků
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
-Returned value : 22013
-Returned value : 22013
-Returned value : 22013
+Active element : not initialised (no item is active)
+Returned value : 22001
+Returned value : 22001
+Returned value : 22001
 
 
 [test_set_value] Aktualizace hodnot aktivních prvků
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_is_active] Aktivita seznamu
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 Is list element active? No
 Is list element active? No
 Is list element active? No
@@ -88,67 +88,67 @@ Is list element active? No
 
 
 [test_first_next_activity] Nastavení aktivity na následnících
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
-Active element : 1244558016
-Active element : 1244558016
-Active element : 1244558016
+Active element : not initialised (no item is active)
+Active element : not initialised (no item is active)
+Active element : not initialised (no item is active)
+Active element : not initialised (no item is active)
 
 
 [test_insert_after] Vložení několika prvků na poslední místo
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_delete_first] Zrušení prvního prvku v seznamu
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_delete_after] Zrušení prvku po aktivním prvku
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 
 
 [test_dispose] Zrušení prvků seznamu
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
-Active element : 1244558016
+Active element : not initialised (no item is active)
