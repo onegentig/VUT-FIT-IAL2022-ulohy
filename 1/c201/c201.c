@@ -97,7 +97,15 @@ void List_Dispose(List *list) {
  * @param data Hodnota k vložení na začátek seznamu
  */
 void List_InsertFirst(List *list, int data) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	ListElementPtr element = (ListElementPtr)malloc(sizeof(struct ListElement));
+	if (element == NULL) {
+		List_Error();
+		return;
+	}
+	
+	element->data = data;
+	element->nextElement = list->firstElement;
+	list->firstElement = element;
 }
 
 /**

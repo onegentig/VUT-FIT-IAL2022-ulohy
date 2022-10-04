@@ -19,17 +19,17 @@
     - [ ] test#05 test_get_value_inactive
     - [ ] test#09 test_get_value
   - [ ] function List_SetValue()
-    - [ ] test#06 test_set_value_inactive
+    - [X] test#06 test_set_value_inactive
     - [ ] test#10 test_set_value
   - [ ] function List_InsertFirst()
-    - [ ] test#04 test_insert_first
+    - [X] test#04 test_insert_first
   - [X] function List_First()
     - [X] test#03 test_first_empty
   - [X] function List_GetFirst()
     - [X] test#02 test_get_first_empty
-    - [ ] test#08 test_get_first
+    - [X] test#08 test_get_first
   - [ ] function List_Next()
-    - [ ] test#07 test_next_inactive
+    - [X] test#07 test_next_inactive
     - [ ] test#12 test_first_next_activity
   - [ ] function List_InsertAfter()
     - [ ] test#13 test_insert_after
