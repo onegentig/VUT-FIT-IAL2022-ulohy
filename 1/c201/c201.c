@@ -182,7 +182,14 @@ void List_InsertAfter(List *list, int data) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void List_GetValue(List *list, int *dataPtr) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	if (list->activeElement == NULL) {
+		List_Error();
+		return;
+	}
+
+	// Vloženie ukazateľa na hodnotu aktivneho prvku do premennej 'dataPtr'
+	*dataPtr = list->activeElement->data;
 }
 
 /**

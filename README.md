@@ -15,8 +15,8 @@
     - [X] test#01 test_init
   - [X] function List_IsActive()
     - [ ] test#11 test_is_active
-  - [ ] function List_GetValue()
-    - [ ] test#05 test_get_value_inactive
+  - [X] function List_GetValue()
+    - [X] test#05 test_get_value_inactive
     - [ ] test#09 test_get_value
   - [ ] function List_SetValue()
     - [X] test#06 test_set_value_inactive
