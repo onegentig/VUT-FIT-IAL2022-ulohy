@@ -23,8 +23,8 @@
     - [ ] test#10 test_set_value
   - [ ] function List_InsertFirst()
     - [ ] test#04 test_insert_first
-  - [ ] function List_First()
-    - [ ] test#03 test_first_empty
+  - [X] function List_First()
+    - [X] test#03 test_first_empty
   - [X] function List_GetFirst()
     - [X] test#02 test_get_first_empty
     - [ ] test#08 test_get_first

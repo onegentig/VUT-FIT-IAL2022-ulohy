@@ -54,16 +54,16 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
 *ERROR* The program has performed an illegal operation.
-Returned value : 22001
+Returned value : 21936
 
 
 [test_get_value] Získání hodnot aktivních prvků
 List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
-Returned value : 22001
-Returned value : 22001
-Returned value : 22001
+Returned value : 21936
+Returned value : 21936
+Returned value : 21936
 
 
 [test_set_value] Aktualizace hodnot aktivních prvků
