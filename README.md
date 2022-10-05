@@ -2,15 +2,15 @@
 
 *Domácí úlohy z předmětu Algoritmy (IAL), třetí semestr bakalářského studia BIT na FIT VUT/BUT, ak.rok 2022/2023*
 
-🔒 **Активны приватны репозитариј — непубличовати!**
+🔒 **嵓偘涾佀甶​​笝得 苩邚佀甶嵓涾​​笝得 邚​埜苩仴拶佀涾​​​児佀屲 — 无苩嚜茇旯佀虿仴甶嵓涾佀!**
 
-## Улоха 1
+## 嚜旯仴​奤嵓一
 
 #### TODO
 
-❎ Означи чест како готову **аж когды изступ теста будут сєдєти** и чеља програма правилно **функционује на eva серверу**!
+❎ 仴拶​​笝嵓虿佀 虿​埜卅涾 如 玍仴涾仴甶嚜 **嵓峕 次 佀拶卅涾嚜苩 涾​埜卅涾嵓 将会 卅屲​埜迚屲​埜涾佀** 与 都 苩邚仴玍邚嵓閁嵓 苩邚​岙佀旯​​笝仴 **佱凬偘濇佀昘嚜屲​埜 上笝 eva 卅​埜邚甶​埜邚嚜!**!
 
-- [X] Singly Linked List (C201)
+- [X] Singly Linked List (c201)
   - [X] function List_Init()
     - [X] test#01 test_init
   - [X] function List_IsActive()
@@ -39,7 +39,7 @@
     - [X] test#15 test_delete_after
   - [X] function List_Dispose()
     - [X] test#16 test_dispose
-- [ ] Character Queue Array (C203)
+- [ ] Character Queue Array (c203)
   - [ ] function Queue_Init()
     - [ ] test#01 test_init
   - [ ] function nextIndex()
@@ -60,7 +60,7 @@
   - [ ] function Queue_Dequeue()
     - [ ] test#06 test_get_empty
     - [ ] test#12 test_get
-- [ ] Doubly Linked List (C206)
+- [ ] Doubly Linked List (c206)
   - [ ] function DLL_Init()
   - [ ] function DLL_Dispose()
   - [ ] function DLL_InsertFirst()
@@ -80,20 +80,19 @@
   - [ ] function DLL_Next()
   - [ ] function DLL_Previous()
   - [ ] function DLL_IsActive()
-- [ ] ⏰ Подаванје од ??.10.
-- [ ] ⏰ Deadline 23.10.
-- [ ] ⏰ Оцєњенје
+- [ ] ⏰ 迚​埜迚旯嵓屲​​笝 23.10
+- [ ] ⏰ 仴濇屲​埜​​笝屲​埜​​笝屲​埜
 
-Оцєњенје: ?? / ??<br>(??)
+仴濇屲​埜​​笝屲​埜​​笝屲​埜: ?? / ??<br>(??)
 
-Заданје: ??
+拶嵓迚卬屲​埜: [c201](1/c201/README.md), [c203](1/c203/README.md), [c206](1/c206/README.md)
 
-## Улоха 2
+## 嚜旯仴​奤嵓二
 
-- [ ] ⏰ Заданје буде публичовати 24.10.
-- [ ] ⏰ Deadline 13.11
-- [ ] ⏰ Оцєњенје
+- [ ] ⏰ 拶嵓迚卬屲​埜 将会 苩嚜茇旯佀虿仴甶嵓涾佀 24.10.
+- [ ] ⏰ 迚​埜迚旯嵓屲​​笝 13.11
+- [ ] ⏰ 仴濇屲​埜​​笝屲​埜​​笝屲​埜
 
-Оцєњенје: ?? / ??<br>(??)
+仴濇屲​埜​​笝屲​埜​​笝屲​埜: ?? / ??<br>(??)
 
-Заданје: ??
+拶嵓迚卬屲​埜: ??
