@@ -48,8 +48,8 @@
 
 #include "c201.h"
 
-#include <stdio.h>	// printf
-#include <stdlib.h> // malloc, free
+#include <stdio.h>
+#include <stdlib.h>
 
 int error_flag;
 int solved;
@@ -85,9 +85,19 @@ void List_Init(List *list) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  **/
 void List_Dispose(List *list) {
-	// Postupné vymazávanie prvého prvku zoznamu pomocou 'List_DeleteFirst()', dokým neostane prázdny
+	// Odstránenie aktivity zoznamu
+	list->activeElement = NULL;
+
+	// Postupné vymazávanie a posúvanie prvého prvku zoznamu pomocou, dokým neostane prázdny.
 	while (list->firstElement != NULL) {
-		List_DeleteFirst(list);
+		ListElementPtr element = list->firstElement;
+		list->firstElement = element->nextElement;
+		free(element);
+		/*
+		 * Alternatívne, a podľa mňa aj elegantnejšie, by bolo využiť funkciu 'List_DeleteFirst'
+		 * vo vyššie uvedenom cykle. Takáto implementácia by však nevyhovovala podmienke
+		 * v zadaní.
+		 */
 	}
 }
 
