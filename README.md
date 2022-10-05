@@ -33,8 +33,8 @@
     - [X] test#12 test_first_next_activity
   - [X] function List_InsertAfter()
     - [X] test#13 test_insert_after
-  - [ ] function List_DeleteFirst()
-    - [ ] test#14 test_delete_first
+  - [X] function List_DeleteFirst()
+    - [X] test#14 test_delete_first
   - [ ] function List_DeleteAfter()
     - [ ] test#15 test_delete_after
   - [ ] function List_Dispose()

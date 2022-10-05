@@ -118,17 +118,17 @@ Active element : 3
 List elements  : 3 2 1
 First element  : 3
 Active element : not initialised (no item is active)
-List elements  : 3 2 1
-First element  : 3
+List elements  : 2 1
+First element  : 2
 Active element : not initialised (no item is active)
-List elements  : 3 2 1
-First element  : 3
+List elements  : 1
+First element  : 1
 Active element : not initialised (no item is active)
-List elements  : 3 2 1
-First element  : 3
+List elements  : none (list is empty)
+First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
-List elements  : 3 2 1
-First element  : 3
+List elements  : none (list is empty)
+First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)
 
 

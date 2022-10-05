@@ -147,7 +147,24 @@ void List_GetFirst(List *list, int *dataPtr) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_DeleteFirst(List *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam neprázdny
+	if (list->firstElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na prvý prvok do pomocnej premennej
+	ListElementPtr element = list->firstElement;
+
+	// Pokiaľ je prvý prvok aktívny, aktivita zoznamu sa stráca
+	if (list->activeElement == element) {
+		list->activeElement = NULL;
+	}
+
+	// Posunutie ukazateľa prvého prvku zoznamu na druhý prvok
+	list->firstElement = element->nextElement;
+
+	// Uvoľnenie pamäte prvku
+	free(element);
 }
 
 /**
