@@ -94,7 +94,7 @@ void List_Dispose(List *list) {
 		list->firstElement = element->nextElement;
 		free(element);
 		/*
-		 * Alternatívne, a podľa mňa aj elegantnejšie, by bolo využiť funkciu 'List_DeleteFirst'
+		 * Alternatívne, a podľa mňa aj elegantnejšie, by bolo využiť funkciu 'List_DeleteFirst()'
 		 * vo vyššie uvedenom cykle. Takáto implementácia by však nevyhovovala podmienke
 		 * v zadaní.
 		 */
@@ -229,6 +229,7 @@ void List_InsertAfter(List *list, int data) {
 
 	// Vloženie hodnoty premennej 'data' do nového prvku
 	element->data = data;
+
 	// Vloženie nového prvku za aktivny prvok
 	element->nextElement = list->activeElement->nextElement;
 	list->activeElement->nextElement = element;
