@@ -41,13 +41,25 @@
     - [X] test#16 test_dispose
 - [ ] Character Queue Array (C203)
   - [ ] function Queue_Init()
+    - [ ] test#01 test_init
   - [ ] function nextIndex()
   - [ ] function Queue_InEmpty()
+    - [ ] test#02 test_empty_empty
+    - [ ] test#03 test_full_empty
+    - [ ] test#09 test_empty_full
   - [ ] function Queue_IsFull()
+    - [ ] test#10 test_full_full
   - [ ] function Queue_Front()
+    - [ ] test#04 test_front_empty
   - [ ] function Queue_Remove()
-  - [ ] function Queue_Dequeue()
+    - [ ] test#05 test_remove_empty
+    - [ ] test#11 test_remove
   - [ ] function Queue_Enqueue()
+    - [ ] test#07 test_up
+    - [ ] test#08 test_up_full
+  - [ ] function Queue_Dequeue()
+    - [ ] test#06 test_get_empty
+    - [ ] test#12 test_get
 - [ ] Doubly Linked List (C206)
   - [ ] function DLL_Init()
   - [ ] function DLL_Dispose()
