@@ -200,7 +200,13 @@ void List_GetValue(List *list, int *dataPtr) {
  * @param data Nová hodnota právě aktivního prvku
  */
 void List_SetValue(List *list, int data) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	if (list->activeElement == NULL) {
+		return;
+	}
+
+	// Nastavenie novej hodnoty aktivneho prvku
+	list->activeElement->data = data;
 }
 
 /**

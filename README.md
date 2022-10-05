@@ -18,7 +18,7 @@
   - [X] function List_GetValue()
     - [X] test#05 test_get_value_inactive
     - [ ] test#09 test_get_value
-  - [ ] function List_SetValue()
+  - [X] function List_SetValue()
     - [X] test#06 test_set_value_inactive
     - [ ] test#10 test_set_value
   - [ ] function List_InsertFirst()
