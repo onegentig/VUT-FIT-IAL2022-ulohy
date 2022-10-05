@@ -31,8 +31,8 @@
   - [X] function List_Next()
     - [X] test#07 test_next_inactive
     - [X] test#12 test_first_next_activity
-  - [ ] function List_InsertAfter()
-    - [ ] test#13 test_insert_after
+  - [X] function List_InsertAfter()
+    - [X] test#13 test_insert_after
   - [ ] function List_DeleteFirst()
     - [ ] test#14 test_delete_first
   - [ ] function List_DeleteAfter()

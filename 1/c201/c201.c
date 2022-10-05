@@ -171,7 +171,23 @@ void List_DeleteAfter(List *list) {
  * @param data Hodnota k vložení do seznamu za právě aktivní prvek
  */
 void List_InsertAfter(List *list, int data) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam aktívny (má aktivny prvok)
+	if (list->activeElement == NULL) {
+		return;
+	}
+
+	// Alokácia pamäte pre nový prvok
+	ListElementPtr element = (ListElementPtr)malloc(sizeof(struct ListElement));
+	if (element == NULL) {
+		List_Error();
+		return;
+	}
+
+	// Vloženie hodnoty premennej 'data' do nového prvku
+	element->data = data;
+	// Vloženie nového prvku za aktivny prvok
+	element->nextElement = list->activeElement->nextElement;
+	list->activeElement->nextElement = element;
 }
 
 /**
