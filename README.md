@@ -8,7 +8,7 @@
 
 #### TODO
 
-❎ Означи чест како готову **аж когды изступ теста будут сєдєти!**
+❎ Означи чест како готову **аж когды изступ теста будут сєдєти** и чеља програма правилно **функционује на eva серверу**!
 
 - [ ] Singly Linked List (C201)
   - [X] function List_Init()
@@ -37,8 +37,8 @@
     - [X] test#14 test_delete_first
   - [X] function List_DeleteAfter()
     - [X] test#15 test_delete_after
-  - [ ] function List_Dispose()
-    - [ ] test#16 test_dispose
+  - [X] function List_Dispose()
+    - [X] test#16 test_dispose
 - [ ] Character Queue Array (C203)
   - [ ] function Queue_Init()
   - [ ] function nextIndex()

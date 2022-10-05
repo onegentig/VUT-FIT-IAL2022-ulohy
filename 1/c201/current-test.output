@@ -151,6 +151,6 @@ Active element : 3
 List elements  : 1 2 3
 First element  : 1
 Active element : not initialised (no item is active)
-List elements  : 1 2 3
-First element  : 1
+List elements  : none (list is empty)
+First element  : not initialised (list is empty)
 Active element : not initialised (no item is active)

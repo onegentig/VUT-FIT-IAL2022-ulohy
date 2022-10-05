@@ -85,7 +85,10 @@ void List_Init(List *list) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  **/
 void List_Dispose(List *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Postupné vymazávanie prvého prvku zoznamu pomocou 'List_DeleteFirst()', dokým neostane prázdny
+	while (list->firstElement != NULL) {
+		List_DeleteFirst(list);
+	}
 }
 
 /**
@@ -106,6 +109,7 @@ void List_InsertFirst(List *list, int data) {
 
 	// Vloženie hodnoty premennej 'data' do nového prvku
 	element->data = data;
+
 	// Vloženie nového prvku na začiatok zoznamu
 	element->nextElement = list->firstElement;
 	list->firstElement = element;
@@ -115,6 +119,7 @@ void List_InsertFirst(List *list, int data) {
  * Nastaví aktivitu seznamu list na jeho první prvek.
  * Funkci implementujte jako jediný příkaz, aniž byste testovali,
  * zda je seznam list prázdný.
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_First(List *list) {
@@ -163,7 +168,7 @@ void List_DeleteFirst(List *list) {
 	// Posunutie ukazateľa prvého prvku zoznamu na druhý prvok
 	list->firstElement = element->nextElement;
 
-	// Uvoľnenie pamäte prvku
+	// Uvoľnenie pamäte
 	free(element);
 }
 
@@ -186,7 +191,7 @@ void List_DeleteAfter(List *list) {
 	// Posunutie ukazateľa aktívneho prvku zoznamu na následujúci prvok
 	list->activeElement->nextElement = element->nextElement;
 
-	// Uvoľnenie pamäte prvku
+	// Uvoľnenie pamäte
 	free(element);
 }
 
@@ -200,7 +205,7 @@ void List_DeleteAfter(List *list) {
  * @param data Hodnota k vložení do seznamu za právě aktivní prvek
  */
 void List_InsertAfter(List *list, int data) {
-	// Kontrola, či je zoznam aktívny (má aktivny prvok)
+	// Kontrola, či zoznam má aktivny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
@@ -227,7 +232,7 @@ void List_InsertAfter(List *list, int data) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void List_GetValue(List *list, int *dataPtr) {
-	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		List_Error();
 		return;
@@ -245,7 +250,7 @@ void List_GetValue(List *list, int *dataPtr) {
  * @param data Nová hodnota právě aktivního prvku
  */
 void List_SetValue(List *list, int data) {
-	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
@@ -262,7 +267,7 @@ void List_SetValue(List *list, int data) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_Next(List *list) {
-	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
