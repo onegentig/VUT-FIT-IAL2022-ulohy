@@ -10,7 +10,7 @@
 
 ❎ Означи чест како готову **аж когды изступ теста будут сєдєти** и чеља програма правилно **функционује на eva серверу**!
 
-- [ ] Singly Linked List (C201)
+- [X] Singly Linked List (C201)
   - [X] function List_Init()
     - [X] test#01 test_init
   - [X] function List_IsActive()
@@ -68,6 +68,7 @@
   - [ ] function DLL_Next()
   - [ ] function DLL_Previous()
   - [ ] function DLL_IsActive()
+- [ ] ⏰ Подаванје од ??.10.
 - [ ] ⏰ Deadline 23.10.
 - [ ] ⏰ Оцєњенје
 
