@@ -175,7 +175,19 @@ void List_DeleteFirst(List *list) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_DeleteAfter(List *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či zoznam má aktivny prvok a následuje za ním ďalší prvok
+	if (list->activeElement == NULL || list->activeElement->nextElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na aktívny prvok do pomocnej premennej
+	ListElementPtr element = list->activeElement->nextElement;
+
+	// Posunutie ukazateľa aktívneho prvku zoznamu na následujúci prvok
+	list->activeElement->nextElement = element->nextElement;
+
+	// Uvoľnenie pamäte prvku
+	free(element);
 }
 
 /**

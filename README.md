@@ -35,8 +35,8 @@
     - [X] test#13 test_insert_after
   - [X] function List_DeleteFirst()
     - [X] test#14 test_delete_first
-  - [ ] function List_DeleteAfter()
-    - [ ] test#15 test_delete_after
+  - [X] function List_DeleteAfter()
+    - [X] test#15 test_delete_after
   - [ ] function List_Dispose()
     - [ ] test#16 test_dispose
 - [ ] Character Queue Array (C203)

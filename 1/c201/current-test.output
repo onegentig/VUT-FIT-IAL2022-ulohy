@@ -136,15 +136,15 @@ Active element : not initialised (no item is active)
 List elements  : 1 1 2 2 3 3
 First element  : 1
 Active element : not initialised (no item is active)
-List elements  : 1 1 2 2 3 3
+List elements  : 1 2 2 3 3
 First element  : 1
 Active element : 1
-List elements  : 1 1 2 2 3 3
-First element  : 1
-Active element : 1
-List elements  : 1 1 2 2 3 3
+List elements  : 1 2 3 3
 First element  : 1
 Active element : 2
+List elements  : 1 2 3
+First element  : 1
+Active element : 3
 
 
 [test_dispose] Zrušení prvků seznamu
