@@ -217,7 +217,13 @@ void List_SetValue(List *list, int data) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_Next(List *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam aktivny (má aktivny prvok)
+	if (list->activeElement == NULL) {
+		return;
+	}
+
+	// Posun aktivneho prvku na nasledujuci prvok
+	list->activeElement = list->activeElement->nextElement;
 }
 
 /**
