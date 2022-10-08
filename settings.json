@@ -1,0 +1,10 @@
+{
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_style": "{ BasedOnStyle: Microsoft, UseTab: Always, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: WithoutElse, IndentCaseLabels: true, SpaceBeforeParens: ControlStatements, BreakBeforeTernaryOperators: true, BreakStringLiterals: true, AlignConsecutiveBitFields: true }",
+  "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": true,
+  "C_Cpp.codeAnalysis.runAutomatically": true,
+  "C_Cpp.simplifyStructuredComments": true,
+  "C_Cpp.vcFormat.indent.withinParentheses": "indent",
+  "C_Cpp.autoAddFileAssociations": true,
+  "C_Cpp.addNodeAddonIncludePaths": false
+}
