@@ -49,8 +49,8 @@
     - [ ] test#09 test_empty_full
   - [ ] function Queue_IsFull()
     - [ ] test#10 test_full_full
-  - [ ] function Queue_Front()
-    - [ ] test#04 test_front_empty
+  - [X] function Queue_Front()
+    - [X] test#04 test_front_empty
   - [ ] function Queue_Remove()
     - [ ] test#05 test_remove_empty
     - [ ] test#11 test_remove

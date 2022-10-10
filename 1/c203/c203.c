@@ -151,7 +151,14 @@ int Queue_IsFull(const Queue *queue) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Front(const Queue *queue, char *dataPtr) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je fronta neprázdna
+	if (Queue_IsEmpty(queue)) {
+		Queue_Error(QERR_FRONT);
+		return;
+	}
+
+	// Vloženie hodnoty zo začiatku fronty do dataPtr
+	*dataPtr = queue->array[queue->firstIndex];
 }
 
 /**
