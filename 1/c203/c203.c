@@ -175,7 +175,8 @@ void Queue_Remove(Queue *queue) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Posunutie indexu na "vymazanie" prvku
+	queue->firstIndex = nextIndex(queue->firstIndex);
 }
 
 /**

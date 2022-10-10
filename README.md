@@ -51,9 +51,9 @@
     - [X] test#10 test_full_full
   - [X] function Queue_Front()
     - [X] test#04 test_front_empty
-  - [ ] function Queue_Remove()
+  - [X] function Queue_Remove()
     - [X] test#05 test_remove_empty
-    - [ ] test#11 test_remove
+    - [X] test#11 test_remove
   - [X] function Queue_Enqueue()
     - [X] test#07 test_up
     - [X] test#08 test_up_full
