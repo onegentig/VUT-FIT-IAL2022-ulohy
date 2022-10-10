@@ -112,8 +112,7 @@ void Queue_Init(Queue *queue) {
  * @param index Aktuální index
  */
 int nextIndex(int index) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
-	return 0;
+	return (index + 1) % MAX_QUEUE;
 }
 
 /**

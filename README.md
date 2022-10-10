@@ -42,7 +42,7 @@
 - [ ] Character Queue Array (c203)
   - [X] function Queue_Init()
     - [X] test#01 test_init
-  - [ ] function nextIndex()
+  - [X] function nextIndex()
   - [ ] function Queue_InEmpty()
     - [ ] test#02 test_empty_empty
     - [ ] test#03 test_full_empty
