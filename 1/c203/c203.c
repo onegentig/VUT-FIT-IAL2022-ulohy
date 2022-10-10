@@ -99,7 +99,7 @@ void Queue_Init(Queue *queue) {
 	queue->freeIndex = 0;
 
 	// Nastavenie všetkých hodnôt v poli na '*'
-	for (int i = 0; i < MAX_QUEUE; i++) {
+	for (int i = 0; i < QUEUE_SIZE; i++) {
 		queue->array[i] = '*';
 	}
 }
@@ -112,7 +112,7 @@ void Queue_Init(Queue *queue) {
  * @param index Aktuální index
  */
 int nextIndex(int index) {
-	return (index + 1) % MAX_QUEUE;
+	return (index + 1) % QUEUE_SIZE;
 }
 
 /**
