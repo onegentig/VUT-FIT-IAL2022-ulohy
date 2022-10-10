@@ -43,9 +43,9 @@
   - [X] function Queue_Init()
     - [X] test#01 test_init
   - [X] function nextIndex()
-  - [ ] function Queue_InEmpty()
-    - [ ] test#02 test_empty_empty
-    - [ ] test#03 test_full_empty
+  - [X] function Queue_IsEmpty()
+    - [X] test#02 test_empty_empty
+    - [X] test#03 test_full_empty
     - [ ] test#09 test_empty_full
   - [ ] function Queue_IsFull()
     - [ ] test#10 test_full_full

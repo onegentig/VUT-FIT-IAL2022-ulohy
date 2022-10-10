@@ -122,8 +122,7 @@ int nextIndex(int index) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 int Queue_IsEmpty(const Queue *queue) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
-	return 0;
+	return queue->firstIndex == queue->freeIndex;
 }
 
 /**
