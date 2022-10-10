@@ -169,6 +169,12 @@ void Queue_Front(const Queue *queue, char *dataPtr) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 void Queue_Remove(Queue *queue) {
+	// Kontrola, či je fronta neprázdna
+	if (Queue_IsEmpty(queue)) {
+		Queue_Error(QERR_REMOVE);
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -183,6 +189,12 @@ void Queue_Remove(Queue *queue) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Dequeue(Queue *queue, char *dataPtr) {
+	// Kontrola, či je fronta neprázdna
+	if (Queue_IsEmpty(queue)) {
+		Queue_Error(QERR_DEQUEUE);
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -199,6 +211,12 @@ void Queue_Dequeue(Queue *queue, char *dataPtr) {
  * @param data Znak k vložení
  */
 void Queue_Enqueue(Queue *queue, char data) {
+	// Kontrola, či fronta nie je plná
+	if (Queue_IsFull(queue)) {
+		Queue_Error(QERR_ENQUEUE);
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 

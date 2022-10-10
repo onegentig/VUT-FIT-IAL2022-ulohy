@@ -52,13 +52,13 @@
   - [X] function Queue_Front()
     - [X] test#04 test_front_empty
   - [ ] function Queue_Remove()
-    - [ ] test#05 test_remove_empty
+    - [X] test#05 test_remove_empty
     - [ ] test#11 test_remove
   - [ ] function Queue_Enqueue()
     - [ ] test#07 test_up
     - [ ] test#08 test_up_full
   - [ ] function Queue_Dequeue()
-    - [ ] test#06 test_get_empty
+    - [X] test#06 test_get_empty
     - [ ] test#12 test_get
 - [ ] Doubly Linked List (c206)
   - [ ] function DLL_Init()
