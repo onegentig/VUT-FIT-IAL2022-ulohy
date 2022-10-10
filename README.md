@@ -57,9 +57,9 @@
   - [X] function Queue_Enqueue()
     - [X] test#07 test_up
     - [X] test#08 test_up_full
-  - [ ] function Queue_Dequeue()
+  - [X] function Queue_Dequeue()
     - [X] test#06 test_get_empty
-    - [ ] test#12 test_get
+    - [X] test#12 test_get
 - [ ] Doubly Linked List (c206)
   - [ ] function DLL_Init()
   - [ ] function DLL_Dispose()

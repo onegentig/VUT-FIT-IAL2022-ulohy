@@ -196,7 +196,11 @@ void Queue_Dequeue(Queue *queue, char *dataPtr) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Vloženie hodnoty zo začiatku fronty do dataPtr
+	Queue_Front(queue, dataPtr);
+
+	// Odstránenie prvku
+	Queue_Remove(queue);
 }
 
 /**
