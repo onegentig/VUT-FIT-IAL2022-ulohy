@@ -64,18 +64,12 @@ int solved;
  *
  * @param error_code Interní identifikátor chyby
  */
-void Queue_Error( int error_code ) {
-	static const char *QERR_STRINGS[MAX_QERR + 1] = {
-			"Unknown error",
-			"Queue error: ENQUEUE",
-			"Queue error: FRONT",
-			"Queue error: REMOVE",
-			"Queue error: DEQUEUE",
-			"Queue error: INIT"
-	};
+void Queue_Error(int error_code) {
+	static const char *QERR_STRINGS[MAX_QERR + 1] = {"Unknown error",		 "Queue error: ENQUEUE",
+													 "Queue error: FRONT",	 "Queue error: REMOVE",
+													 "Queue error: DEQUEUE", "Queue error: INIT"};
 
-	if (error_code <= 0 || error_code > MAX_QERR)
-	{
+	if (error_code <= 0 || error_code > MAX_QERR) {
 		error_code = 0;
 	}
 	printf("%s\n", QERR_STRINGS[error_code]);
@@ -93,7 +87,7 @@ void Queue_Error( int error_code ) {
  *
  * @param stack Ukazatel na strukturu fronty
  */
-void Queue_Init( Queue *queue ) {
+void Queue_Init(Queue *queue) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -104,7 +98,7 @@ void Queue_Init( Queue *queue ) {
  *
  * @param index Aktuální index
  */
-int nextIndex( int index ) {
+int nextIndex(int index) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 	return 0;
 }
@@ -115,7 +109,7 @@ int nextIndex( int index ) {
  *
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
-int Queue_IsEmpty( const Queue *queue ) {
+int Queue_IsEmpty(const Queue *queue) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 	return 0;
 }
@@ -127,7 +121,7 @@ int Queue_IsEmpty( const Queue *queue ) {
  *
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
-int Queue_IsFull( const Queue *queue ) {
+int Queue_IsFull(const Queue *queue) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 	return 0;
 }
@@ -145,7 +139,7 @@ int Queue_IsFull( const Queue *queue ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
-void Queue_Front( const Queue *queue, char *dataPtr ) {
+void Queue_Front(const Queue *queue, char *dataPtr) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -157,7 +151,7 @@ void Queue_Front( const Queue *queue, char *dataPtr ) {
  *
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
-void Queue_Remove( Queue *queue ) {
+void Queue_Remove(Queue *queue) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -171,7 +165,7 @@ void Queue_Remove( Queue *queue ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
-void Queue_Dequeue( Queue *queue, char *dataPtr ) {
+void Queue_Dequeue(Queue *queue, char *dataPtr) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -187,7 +181,7 @@ void Queue_Dequeue( Queue *queue, char *dataPtr ) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  * @param data Znak k vložení
  */
-void Queue_Enqueue( Queue *queue, char data ) {
+void Queue_Enqueue(Queue *queue, char data) {
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
