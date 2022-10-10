@@ -88,7 +88,20 @@ void Queue_Error(int error_code) {
  * @param stack Ukazatel na strukturu fronty
  */
 void Queue_Init(Queue *queue) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je queue platný ukazateľ
+	if (queue == NULL) {
+		Queue_Error(QERR_INIT);
+		return;
+	}
+
+	// Nastavenie indexov na 0
+	queue->firstIndex = 0;
+	queue->freeIndex = 0;
+
+	// Nastavenie všetkých hodnôt v poli na '*'
+	for (int i = 0; i < MAX_QUEUE; i++) {
+		queue->array[i] = '*';
+	}
 }
 
 /**

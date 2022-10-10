@@ -40,8 +40,8 @@
   - [X] function List_Dispose()
     - [X] test#16 test_dispose
 - [ ] Character Queue Array (c203)
-  - [ ] function Queue_Init()
-    - [ ] test#01 test_init
+  - [X] function Queue_Init()
+    - [X] test#01 test_init
   - [ ] function nextIndex()
   - [ ] function Queue_InEmpty()
     - [ ] test#02 test_empty_empty
