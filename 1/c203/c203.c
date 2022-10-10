@@ -133,8 +133,7 @@ int Queue_IsEmpty(const Queue *queue) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 int Queue_IsFull(const Queue *queue) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
-	return 0;
+	return nextIndex(queue->freeIndex) == queue->firstIndex;
 }
 
 /**

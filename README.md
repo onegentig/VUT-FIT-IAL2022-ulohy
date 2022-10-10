@@ -47,7 +47,7 @@
     - [X] test#02 test_empty_empty
     - [X] test#03 test_full_empty
     - [ ] test#09 test_empty_full
-  - [ ] function Queue_IsFull()
+  - [X] function Queue_IsFull()
     - [ ] test#10 test_full_full
   - [X] function Queue_Front()
     - [X] test#04 test_front_empty
