@@ -217,7 +217,9 @@ void Queue_Enqueue(Queue *queue, char data) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Vloženie znaku do fronty na volnú pozíciu
+	queue->array[queue->freeIndex] = data;
+	queue->freeIndex = nextIndex(queue->freeIndex);
 }
 
 /* Konec příkladu c203.c */

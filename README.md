@@ -46,7 +46,7 @@
   - [X] function Queue_IsEmpty()
     - [X] test#02 test_empty_empty
     - [X] test#03 test_full_empty
-    - [ ] test#09 test_empty_full
+    - [X] test#09 test_empty_full
   - [X] function Queue_IsFull()
     - [ ] test#10 test_full_full
   - [X] function Queue_Front()
@@ -54,8 +54,8 @@
   - [ ] function Queue_Remove()
     - [X] test#05 test_remove_empty
     - [ ] test#11 test_remove
-  - [ ] function Queue_Enqueue()
-    - [ ] test#07 test_up
+  - [X] function Queue_Enqueue()
+    - [X] test#07 test_up
     - [ ] test#08 test_up_full
   - [ ] function Queue_Dequeue()
     - [X] test#06 test_get_empty
