@@ -39,7 +39,7 @@
     - [X] test#15 test_delete_after
   - [X] function List_Dispose()
     - [X] test#16 test_dispose
-- [ ] Character Queue Array (c203)
+- [X] Character Queue Array (c203)
   - [X] function Queue_Init()
     - [X] test#01 test_init
   - [X] function nextIndex()

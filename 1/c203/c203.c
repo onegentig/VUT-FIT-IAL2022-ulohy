@@ -150,7 +150,7 @@ int Queue_IsFull(const Queue *queue) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Front(const Queue *queue, char *dataPtr) {
-	// Kontrola, či je fronta neprázdna
+	// Kontrola, či je fronta neprázdna (underflow)
 	if (Queue_IsEmpty(queue)) {
 		Queue_Error(QERR_FRONT);
 		return;
@@ -169,7 +169,7 @@ void Queue_Front(const Queue *queue, char *dataPtr) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 void Queue_Remove(Queue *queue) {
-	// Kontrola, či je fronta neprázdna
+	// Kontrola, či je fronta neprázdna (underflow)
 	if (Queue_IsEmpty(queue)) {
 		Queue_Error(QERR_REMOVE);
 		return;
@@ -190,7 +190,7 @@ void Queue_Remove(Queue *queue) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void Queue_Dequeue(Queue *queue, char *dataPtr) {
-	// Kontrola, či je fronta neprázdna
+	// Kontrola, či je fronta neprázdna (underflow)
 	if (Queue_IsEmpty(queue)) {
 		Queue_Error(QERR_DEQUEUE);
 		return;
@@ -216,7 +216,7 @@ void Queue_Dequeue(Queue *queue, char *dataPtr) {
  * @param data Znak k vložení
  */
 void Queue_Enqueue(Queue *queue, char data) {
-	// Kontrola, či fronta nie je plná
+	// Kontrola, či fronta nie je plná (overflow)
 	if (Queue_IsFull(queue)) {
 		Queue_Error(QERR_ENQUEUE);
 		return;
