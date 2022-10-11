@@ -65,8 +65,8 @@
     - [X] test#01 test_init
   - [ ] function DLL_Dispose()
     - [ ] test#25 test_dispose
-  - [ ] function DLL_InsertFirst()
-    - [ ] test#06 test_insert_first
+  - [X] function DLL_InsertFirst()
+    - [X] test#06 test_insert_first
     - [ ] test#08 test_get_value_inactive
   - [ ] function DLL_InsertLast()
     - [ ] test#07 test_insert_last
