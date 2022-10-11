@@ -2,13 +2,13 @@
 
 *Domácí úlohy z předmětu Algoritmy (IAL), třetí semestr bakalářského studia BIT na FIT VUT/BUT, ak.rok 2022/2023*
 
-🔒 **劜厑偘夳籴甶的卅汙偘​邚仴閁的​邚埜​苩仴拶佀夳溰​邚 — 不拶甶埜​邚埜襾着！**
+🔒 **Aktivní soukromý repozitář — nezveřejňovat!**
 
-## 汙旯仴奤厑一
+## Úloha 1
 
 #### TODO
 
-❎ 劜虿厑卅夳襾仴拶​​笝厑虿着彼奤仴夳仴甶的**曾遂偘埜迚襾劜甶籴卅夳歮​苩丿夳埜卅夳歮卅埜迚籴**与涾卅埜旯的劜​苩​邚仴玍​邚厑閁曾倘是**卅​苩歮卅夳佀夳埜旯襾​​笝籴上笝eva卅埜​邚甶埜​邚佀！**
+❎ Funkce úkolu označovat jako dokončené **jen když výstup testu sedí** a celý úkol pouze **když je program plně funkční na serveru eva!**
 
 - [X] Singly Linked List (c201)
   - [X] function List_Init()
@@ -62,37 +62,62 @@
     - [X] test#12 test_get
 - [ ] Doubly Linked List (c206)
   - [ ] function DLL_Init()
+    - [ ] test#01 test_init
   - [ ] function DLL_Dispose()
+    - [ ] test#25 test_dispose
   - [ ] function DLL_InsertFirst()
+    - [ ] test#06 test_insert_first
+    - [ ] test#08 test_get_value_inactive
   - [ ] function DLL_InsertLast()
+    - [ ] test#07 test_insert_last
   - [ ] function DLL_First()
+    - [ ] test#04 test_first_empty
+    - [ ] test#16 test_first_next_activity
   - [ ] function DLL_Last()
+    - [ ] test#05 test_last_empty
+    - [ ] test#17 test_last_previous_activity
   - [ ] function DLL_GetFirst()
+    - [ ] test#02 test_get_first_empty
+    - [ ] test#12 test_get_first
   - [ ] function DLL_GetLast()
+    - [ ] test#03 test_get_last_empty
+    - [ ] test#13 test_get_last
   - [ ] function DLL_DeleteFirst()
+    - [ ] test#21 test_delete_first
   - [ ] function DLL_DeleteLast()
+    - [ ] test#22 test_delete_last
   - [ ] function DLL_DeleteAfter()
+    - [ ] test#24 test_delete_after
   - [ ] function DLL_DeleteBefore()
+    - [ ] test#23 test_delete_before
   - [ ] function DLL_InsertAfter()
+    - [ ] test#19 test_insert_after
   - [ ] function DLL_InsertBefore()
+    - [ ] test#20 test_insert_before
   - [ ] function DLL_GetValue()
+    - [ ] test#14 test_get_value
   - [ ] function DLL_SetValue()
+    - [ ] test#09 test_set_value_inactive
+    - [ ] test#15 test_set_value
   - [ ] function DLL_Next()
+    - [ ] test#10 test_next_inactive
   - [ ] function DLL_Previous()
+    - [ ] test#11 test_previous_inactive
   - [ ] function DLL_IsActive()
-- [ ] ⏰ 迚埜厑迚旯佀​​笝埜 23.10
-- [ ] ⏰ 奤仴迚​​笝仴夳着
+    - [ ] test#18 test_is_active
+- [ ] ⏰ Deadline 23.10
+- [ ] ⏰ Hodnocení
 
-奤仴迚​​笝仴夳着： ？ / ？<br>（？）
+Hodnocení: ? / ? <br>（？）
 
-拶嵓迚卬屲​埜: [c201](1/c201/README.md), [c203](1/c203/README.md), [c206](1/c206/README.md)
+Zadání: [c201](1/c201/README.md), [c203](1/c203/README.md), [c206](1/c206/README.md)
 
-## 汙旯仴奤厑二
+## Úloha 2
 
-- [ ] ⏰ 劜拶厑迚厑着乃拶甶埜​邚埜襾​​笝埜​​笝的 24.10.
-- [ ] ⏰ 迚埜厑迚旯佀​​笝埜 13.11
-- [ ] ⏰ 奤仴迚​​笝仴夳着
+- [ ] ⏰ Zadání 24.10.
+- [ ] ⏰ Deadline 13.11
+- [ ] ⏰ Hodnocení
 
-奤仴迚​​笝仴夳着： ？ / ？<br>（？）
+Hodnocení: ? / ? <br>（？）
 
-拶嵓迚卬屲​埜： ？
+Zadání: ？
