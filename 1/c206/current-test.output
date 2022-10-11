@@ -1,0 +1,5 @@
+C206 - Doubly Linked List, Basic Tests
+======================================
+
+[test_init] Inicializace seznamu
+Segmentation fault (core dumped)
