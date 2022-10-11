@@ -6,12 +6,12 @@ Implementujte abstraktní datový typ (ADT) **dvousměrně-vázaný lineární s
 
 ```c
 typedef struct {
-	/** Ukazatel na první prvek seznamu. */
-	DLLElementPtr firstElement;
-	/** Ukazatel na aktuální prvek seznamu. */
-	DLLElementPtr activeElement;
-	/** Ukazatel na posledni prvek seznamu. */
-	DLLElementPtr lastElement;
+  /** Ukazatel na první prvek seznamu. */
+  DLLElementPtr firstElement;
+  /** Ukazatel na aktuální prvek seznamu. */
+  DLLElementPtr activeElement;
+  /** Ukazatel na posledni prvek seznamu. */
+  DLLElementPtr lastElement;
 } DLList;
 ```
 
@@ -19,12 +19,12 @@ Typ `DLLElementPtr` bude definován jako ukazatel na strukturu `DLLElement`:
 
 ```c
 typedef struct DLLElement {
-	/** Užitečná data. */
-	int data;
-	/** Ukazatel na předcházející prvek seznamu. */
-	struct DLLElement *previousElement;
-	/** Ukazatel na následující prvek seznamu. */
-	struct DLLElement *nextElement;
+  /** Užitečná data. */
+  int data;
+  /** Ukazatel na předcházející prvek seznamu. */
+  struct DLLElement *previousElement;
+  /** Ukazatel na následující prvek seznamu. */
+  struct DLLElement *nextElement;
 } *DLLElementPtr;
 ```
 

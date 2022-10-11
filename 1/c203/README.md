@@ -6,12 +6,12 @@ Implementujte **frontu znaků v poli** (*character array queue*). Fronta (*queue
 
 ```c
 typedef struct {
-	/** Pole pro uložení hodnot. */
-	char array[MAX_QUEUE];
-	/** Index prvního prvku. */
-	int firstIndex;
-	/** Index první volné pozice. */
-	int freeIndex;
+  /** Pole pro uložení hodnot. */
+  char array[MAX_QUEUE];
+  /** Index prvního prvku. */
+  int firstIndex;
+  /** Index první volné pozice. */
+  int freeIndex;
 } Queue;
 ```
 

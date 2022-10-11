@@ -7,9 +7,9 @@ Implementujte abstraktní datový typ **jednosměrný lineární seznam** (*sing
 ```c
 typedef struct {
   /** Ukazatel na první prvek seznamu */
-	ListElementPtr firstElement;
+  ListElementPtr firstElement;
   /** Ukazatel na aktivní prvek seznamu */
-	ListElementPtr activeElement;
+  ListElementPtr activeElement;
 } List;
 ```
 
@@ -17,10 +17,10 @@ List je tedy struktura, která obsahuje dva ukazatele. První ukazuje na první 
 
 ```c
 typedef struct ListElement {
-	/** Užitečná data */
-    int data;
-	/** Ukazatel na následující prvek seznamu */
-    struct ListElement *nextElement;
+  /** Užitečná data */
+  int data;
+  /** Ukazatel na následující prvek seznamu */
+  struct ListElement *nextElement;
 } *ListElementPtr;
 ```
 
