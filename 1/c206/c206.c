@@ -126,7 +126,7 @@ void DLL_InsertFirst(DLList *list, int data) {
 	// Vloženie nového prvku na začiatok zoznamu
 	list->firstElement = element;
 
-	// Nastavenie nového prvku ako posledného, pokiaľ bol zoznam predtým prázdny
+	// Nastavenie nového prvku ako posledného, pokiaľ je zoznam prázdny
 	if (list->lastElement == NULL) {
 		list->lastElement = element;
 	}
@@ -141,7 +141,32 @@ void DLL_InsertFirst(DLList *list, int data) {
  * @param data Hodnota k vložení na konec seznamu
  */
 void DLL_InsertLast(DLList *list, int data) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Alokácia pamäte pre nový prvok
+	DLLElementPtr element = (DLLElementPtr)malloc(sizeof(struct DLLElement));
+	if (element == NULL) {
+		DLL_Error();
+		return;
+	}
+
+	// Vloženie hodnoty premennej 'data' do nového prvku
+	element->data = data;
+
+	// Nastavenie postupnosti nového prvku
+	element->previousElement = list->lastElement;
+	element->nextElement = NULL;
+
+	// Nastavenie postupnosti pôvodne-posledného prvku
+	if (list->lastElement != NULL) {
+		list->lastElement->nextElement = element;
+	}
+
+	// Vloženie nového prvku na koniec zoznamu
+	list->lastElement = element;
+
+	// Nastavenie nového prvku ako prvého, pokiaľ je zoznam prázdny
+	if (list->firstElement == NULL) {
+		list->firstElement = element;
+	}
 }
 
 /**

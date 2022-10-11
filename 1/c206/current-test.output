@@ -68,21 +68,21 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Last element   : not initialised (list is empty)
 Active element : not initialised (no item is active)
-List elements  : none (list is empty)
-First element  : not initialised (list is empty)
-Last element   : not initialised (list is empty)
+List elements  : 1
+First element  : 1
+Last element   : 1
 Active element : not initialised (no item is active)
-List elements  : none (list is empty)
-First element  : not initialised (list is empty)
-Last element   : not initialised (list is empty)
+List elements  : 1 2
+First element  : 1
+Last element   : 2
 Active element : not initialised (no item is active)
-List elements  : none (list is empty)
-First element  : not initialised (list is empty)
-Last element   : not initialised (list is empty)
+List elements  : 1 2 3
+First element  : 1
+Last element   : 3
 Active element : not initialised (no item is active)
-List elements  : none (list is empty)
-First element  : not initialised (list is empty)
-Last element   : not initialised (list is empty)
+List elements  : 1 2 3 4
+First element  : 1
+Last element   : 4
 Active element : not initialised (no item is active)
 
 

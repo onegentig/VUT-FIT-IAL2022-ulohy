@@ -68,8 +68,8 @@
   - [X] function DLL_InsertFirst()
     - [X] test#06 test_insert_first
     - [ ] test#08 test_get_value_inactive
-  - [ ] function DLL_InsertLast()
-    - [ ] test#07 test_insert_last
+  - [X] function DLL_InsertLast()
+    - [X] test#07 test_insert_last
   - [X] function DLL_First()
     - [X] test#04 test_first_empty
     - [ ] test#16 test_first_next_activity
