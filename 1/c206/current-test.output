@@ -91,6 +91,7 @@ List elements  : 1 2 3
 First element  : 1
 Last element   : 3
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 
 
 [test_set_value_inactive] Aktualizace hodnoty prvku v seznamu bez aktivního prvku
@@ -195,11 +196,11 @@ First element  : 1
 Last element   : 2
 Active element : not initialised (no item is active)
 Is list element active? No
-Is list element active? No
-Is list element active? No
-Is list element active? No
-Is list element active? No
-Is list element active? No
+Is list element active? Yes
+Is list element active? Yes
+Is list element active? Yes
+Is list element active? Yes
+Is list element active? Yes
 
 
 [test_insert_after] Vložení několika prvků po aktivním prvku

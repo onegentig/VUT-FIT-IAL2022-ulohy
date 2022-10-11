@@ -67,7 +67,7 @@
     - [ ] test#25 test_dispose
   - [X] function DLL_InsertFirst()
     - [X] test#06 test_insert_first
-    - [ ] test#08 test_get_value_inactive
+    - [X] test#08 test_get_value_inactive
   - [X] function DLL_InsertLast()
     - [X] test#07 test_insert_last
   - [X] function DLL_First()
@@ -97,12 +97,12 @@
   - [ ] function DLL_GetValue()
     - [ ] test#14 test_get_value
   - [ ] function DLL_SetValue()
-    - [ ] test#09 test_set_value_inactive
+    - [X] test#09 test_set_value_inactive
     - [ ] test#15 test_set_value
   - [ ] function DLL_Next()
-    - [ ] test#10 test_next_inactive
+    - [X] test#10 test_next_inactive
   - [ ] function DLL_Previous()
-    - [ ] test#11 test_previous_inactive
+    - [X] test#11 test_previous_inactive
   - [ ] function DLL_IsActive()
     - [ ] test#18 test_is_active
 - [ ] ⏰ Deadline 23.10

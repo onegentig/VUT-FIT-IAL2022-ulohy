@@ -255,6 +255,11 @@ void DLL_DeleteLast(DLList *list) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_DeleteAfter(DLList *list) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -266,6 +271,11 @@ void DLL_DeleteAfter(DLList *list) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_DeleteBefore(DLList *list) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -279,6 +289,11 @@ void DLL_DeleteBefore(DLList *list) {
  * @param data Hodnota k vložení do seznamu za právě aktivní prvek
  */
 void DLL_InsertAfter(DLList *list, int data) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -292,6 +307,11 @@ void DLL_InsertAfter(DLList *list, int data) {
  * @param data Hodnota k vložení do seznamu před právě aktivní prvek
  */
 void DLL_InsertBefore(DLList *list, int data) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -303,6 +323,12 @@ void DLL_InsertBefore(DLList *list, int data) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void DLL_GetValue(DLList *list, int *dataPtr) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		DLL_Error();
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -314,6 +340,11 @@ void DLL_GetValue(DLList *list, int *dataPtr) {
  * @param data Nová hodnota právě aktivního prvku
  */
 void DLL_SetValue(DLList *list, int data) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -325,6 +356,11 @@ void DLL_SetValue(DLList *list, int data) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_Next(DLList *list) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -336,6 +372,11 @@ void DLL_Next(DLList *list) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_Previous(DLList *list) {
+	// Kontrola, či má zoznam aktívny prvok
+	if (!DLL_IsActive(list)) {
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -348,8 +389,7 @@ void DLL_Previous(DLList *list) {
  * @returns Nenulovou hodnotu v případě aktivity prvku seznamu, jinak nulu
  */
 int DLL_IsActive(DLList *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
-	return 0;
+	return list->activeElement != NULL;
 }
 
 /* Konec c206.c */
