@@ -70,11 +70,11 @@
     - [ ] test#08 test_get_value_inactive
   - [ ] function DLL_InsertLast()
     - [ ] test#07 test_insert_last
-  - [ ] function DLL_First()
-    - [ ] test#04 test_first_empty
+  - [X] function DLL_First()
+    - [X] test#04 test_first_empty
     - [ ] test#16 test_first_next_activity
-  - [ ] function DLL_Last()
-    - [ ] test#05 test_last_empty
+  - [X] function DLL_Last()
+    - [X] test#05 test_last_empty
     - [ ] test#17 test_last_previous_activity
   - [ ] function DLL_GetFirst()
     - [X] test#02 test_get_first_empty
