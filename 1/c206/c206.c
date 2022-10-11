@@ -256,7 +256,7 @@ void DLL_DeleteLast(DLList *list) {
  */
 void DLL_DeleteAfter(DLList *list) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -272,7 +272,7 @@ void DLL_DeleteAfter(DLList *list) {
  */
 void DLL_DeleteBefore(DLList *list) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -290,7 +290,7 @@ void DLL_DeleteBefore(DLList *list) {
  */
 void DLL_InsertAfter(DLList *list, int data) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -308,7 +308,7 @@ void DLL_InsertAfter(DLList *list, int data) {
  */
 void DLL_InsertBefore(DLList *list, int data) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -324,7 +324,7 @@ void DLL_InsertBefore(DLList *list, int data) {
  */
 void DLL_GetValue(DLList *list, int *dataPtr) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		DLL_Error();
 		return;
 	}
@@ -341,7 +341,7 @@ void DLL_GetValue(DLList *list, int *dataPtr) {
  */
 void DLL_SetValue(DLList *list, int data) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -357,7 +357,7 @@ void DLL_SetValue(DLList *list, int data) {
  */
 void DLL_Next(DLList *list) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
@@ -373,7 +373,7 @@ void DLL_Next(DLList *list) {
  */
 void DLL_Previous(DLList *list) {
 	// Kontrola, či má zoznam aktívny prvok
-	if (!DLL_IsActive(list)) {
+	if (list->activeElement == NULL) {
 		return;
 	}
 
