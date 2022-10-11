@@ -13,6 +13,7 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Last element   : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 
 
 [test_get_last_empty] Získání hodnoty posledního prvku v prázdném seznamu
@@ -20,6 +21,7 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Last element   : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 
 
 [test_first_empty] Aktivace prvního prvku v prázdném seznamu
@@ -129,6 +131,7 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Last element   : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 Returned value : 0
 
 
@@ -137,6 +140,7 @@ List elements  : none (list is empty)
 First element  : not initialised (list is empty)
 Last element   : not initialised (list is empty)
 Active element : not initialised (no item is active)
+*ERROR* The program has performed an illegal operation.
 Returned value : 0
 
 

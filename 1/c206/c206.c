@@ -149,6 +149,12 @@ void DLL_Last(DLList *list) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void DLL_GetFirst(DLList *list, int *dataPtr) {
+	// Kontrola, či je zoznam neprázdny
+	if (list->firstElement == NULL) {
+		DLL_Error();
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
@@ -160,6 +166,12 @@ void DLL_GetFirst(DLList *list, int *dataPtr) {
  * @param dataPtr Ukazatel na cílovou proměnnou
  */
 void DLL_GetLast(DLList *list, int *dataPtr) {
+	// Kontrola, či je zoznam neprázdny
+	if (list->firstElement == NULL) {
+		DLL_Error();
+		return;
+	}
+
 	solved = FALSE; /* V případě řešení, smažte tento řádek! */
 }
 
