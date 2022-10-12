@@ -235,7 +235,33 @@ void DLL_GetLast(DLList *list, int *dataPtr) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_DeleteFirst(DLList *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či je zoznam neprázdny
+	if (list->firstElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na prvý prvok do pomocnej premennej
+	DLLElementPtr element = list->firstElement;
+
+	// Pokiaľ je rušený prvok aktívny, aktivita zoznamu sa stráca
+	if (list->activeElement == element) {
+		list->activeElement = NULL;
+	}
+
+	// Zrušenie celého zoznamu pokiaľ obsahuje iba jeden (rušený) prvok
+	if (list->firstElement == list->lastElement) {
+		list->firstElement = NULL;
+		list->lastElement = NULL;
+	} else {
+		// Posunutie ukazateľa na prvého prvku na nasledujúci prvok
+		list->firstElement = element->nextElement;
+
+		// Zrušenie ukazateľa na predchádzajúci prvok
+		list->firstElement->previousElement = NULL;
+	}
+
+	// Uvoľnenie pamäte rušeného prvku
+	free(element);
 }
 
 /**
