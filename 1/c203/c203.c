@@ -133,7 +133,8 @@ int Queue_IsEmpty(const Queue *queue) {
  * @param queue Ukazatel na inicializovanou strukturu fronty
  */
 int Queue_IsFull(const Queue *queue) {
-	return nextIndex(queue->freeIndex) == queue->firstIndex;
+	return (nextIndex(queue->freeIndex) == queue->firstIndex ||
+			(queue->freeIndex == 0 && queue->firstIndex == MAX_QUEUE - 1));
 }
 
 /**
