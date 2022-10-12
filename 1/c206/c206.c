@@ -365,7 +365,8 @@ void DLL_Next(DLList *list) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Posun aktivity na následujúci prvok
+	list->activeElement = list->activeElement->nextElement;
 }
 
 /**

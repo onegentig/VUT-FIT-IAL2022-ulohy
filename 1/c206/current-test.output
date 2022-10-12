@@ -149,8 +149,8 @@ First element  : 1
 Last element   : 3
 Active element : not initialised (no item is active)
 Returned value : 1
-Returned value : 1
-Returned value : 1
+Returned value : 2
+Returned value : 3
 
 
 [test_set_value] Aktualizace hodnot aktivních prvků
@@ -162,9 +162,9 @@ List elements  : 3 2 3
 First element  : 3
 Last element   : 3
 Active element : 3
-List elements  : 1 2 3
-First element  : 1
-Last element   : 3
+List elements  : 3 2 1
+First element  : 3
+Last element   : 1
 Active element : 1
 
 
@@ -174,9 +174,9 @@ List elements  : 1 2 3
 First element  : 1
 Last element   : 3
 Active element : 1
-Active element : 1
-Active element : 1
-Active element : 1
+Active element : 2
+Active element : 3
+Active element : not initialised (no item is active)
 
 
 [test_last_previous_activity] Nastavení aktivity na předchůdcích
@@ -199,8 +199,8 @@ Is list element active? No
 Is list element active? Yes
 Is list element active? Yes
 Is list element active? Yes
-Is list element active? Yes
-Is list element active? Yes
+Is list element active? No
+Is list element active? No
 
 
 [test_insert_after] Vložení několika prvků po aktivním prvku
@@ -219,7 +219,7 @@ Active element : 1
 List elements  : 1
 First element  : 1
 Last element   : 1
-Active element : 1
+Active element : not initialised (no item is active)
 
 
 [test_insert_before] Vložení několika prvků po před aktivní prvek
@@ -322,7 +322,7 @@ Active element : 1
 List elements  : 1 1 2 2 3 3
 First element  : 1
 Last element   : 3
-Active element : 1
+Active element : 2
 
 
 [test_dispose] Zrušení prvků seznamu

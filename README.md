@@ -72,7 +72,7 @@
     - [X] test#07 test_insert_last
   - [X] function DLL_First()
     - [X] test#04 test_first_empty
-    - [ ] test#16 test_first_next_activity
+    - [X] test#16 test_first_next_activity
   - [X] function DLL_Last()
     - [X] test#05 test_last_empty
     - [ ] test#17 test_last_previous_activity
@@ -95,10 +95,10 @@
   - [ ] function DLL_InsertBefore()
     - [ ] test#20 test_insert_before
   - [X] function DLL_GetValue()
-    - [ ] test#14 test_get_value
+    - [X] test#14 test_get_value
   - [X] function DLL_SetValue()
     - [X] test#09 test_set_value_inactive
-    - [ ] test#15 test_set_value
+    - [X] test#15 test_set_value
   - [ ] function DLL_Next()
     - [X] test#10 test_next_inactive
   - [ ] function DLL_Previous()
