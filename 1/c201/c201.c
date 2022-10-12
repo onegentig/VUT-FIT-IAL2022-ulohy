@@ -152,7 +152,7 @@ void List_GetFirst(List *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty dátovej zložky prvého prvku do ukazateľa 'dataPtr'
+	// Vloženie hodnoty dátovej zložky prvého prvku do cielovej premennej
 	*dataPtr = list->firstElement->data;
 }
 
@@ -258,7 +258,7 @@ void List_GetValue(List *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty dátovej zložky aktivneho prvku do ukazateľa 'dataPtr'
+	// Vloženie hodnoty dátovej zložky aktivneho prvku do cielovej premennej
 	*dataPtr = list->activeElement->data;
 }
 

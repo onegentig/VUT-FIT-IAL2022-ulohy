@@ -205,7 +205,7 @@ void DLL_GetFirst(DLList *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty dátovej zložky prvého prvku do ukazateľa 'dataPtr'
+	// Vloženie hodnoty dátovej zložky prvého prvku do cielovej premennej
 	*dataPtr = list->firstElement->data;
 }
 
@@ -223,7 +223,7 @@ void DLL_GetLast(DLList *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty dátovej zložky posledného prvku do ukazateľa 'dataPtr'
+	// Vloženie hodnoty dátovej zložky posledného prvku do cielovej premennej
 	*dataPtr = list->lastElement->data;
 }
 
@@ -331,7 +331,7 @@ void DLL_GetValue(DLList *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty aktívneho prvku do ukazateľa 'dataPtr'
+	// Vloženie hodnoty aktívneho prvku do ukazateľa cielovej premennej
 	*dataPtr = list->activeElement->data;
 }
 

@@ -158,7 +158,7 @@ void Queue_Front(const Queue *queue, char *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty zo začiatku fronty do ukazateľa 'dataPtr'
+	// Vloženie hodnoty zo začiatku fronty do cielovej premennej
 	*dataPtr = queue->array[queue->firstIndex];
 }
 
@@ -198,7 +198,7 @@ void Queue_Dequeue(Queue *queue, char *dataPtr) {
 		return;
 	}
 
-	// Vloženie hodnoty zo začiatku fronty do ukazateľa 'dataPtr'
+	// Vloženie hodnoty zo začiatku fronty do cielovej premennej
 	Queue_Front(queue, dataPtr);
 
 	// Odstránenie prvku zo začiatku fronty
