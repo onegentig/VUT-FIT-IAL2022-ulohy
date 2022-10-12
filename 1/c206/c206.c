@@ -339,7 +339,32 @@ void DLL_InsertBefore(DLList *list, int data) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Alokácia pamäte pre nový prvok
+	DLLElementPtr element = (DLLElementPtr)malloc(sizeof(struct DLLElement));
+	if (element == NULL) {
+		DLL_Error();
+		return;
+	}
+
+	// Nastavenie hodnoty dátovej zložky nového prvku
+	element->data = data;
+
+	// Nastavenie ukazateľov na nasledujúci a predchádzajúci prvok
+	element->previousElement = list->activeElement->previousElement;
+	element->nextElement = list->activeElement;
+
+	// Posunutie pôvodne-predchádzajúceho prvku (pokiaľ existuje)
+	if (list->activeElement->previousElement != NULL) {
+		list->activeElement->previousElement->nextElement = element;
+	}
+
+	// Vloženie nového prvku pred aktívny prvok
+	list->activeElement->previousElement = element;
+
+	// Nastavenie nového prvku zároveň ako prvý prvok, pokiaľ bol aktívny prvok prvý
+	if (list->firstElement == list->activeElement) {
+		list->firstElement = element;
+	}
 }
 
 /**
