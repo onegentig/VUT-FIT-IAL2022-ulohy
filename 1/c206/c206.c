@@ -331,7 +331,8 @@ void DLL_GetValue(DLList *list, int *dataPtr) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Vloženie hodnoty aktívneho prvku do ukazateľa 'dataPtr'
+	*dataPtr = list->activeElement->data;
 }
 
 /**
@@ -347,7 +348,8 @@ void DLL_SetValue(DLList *list, int data) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Nastavenie hodnoty aktívneho prvku
+	list->activeElement->data = data;
 }
 
 /**

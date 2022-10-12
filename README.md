@@ -94,9 +94,9 @@
     - [ ] test#19 test_insert_after
   - [ ] function DLL_InsertBefore()
     - [ ] test#20 test_insert_before
-  - [ ] function DLL_GetValue()
+  - [X] function DLL_GetValue()
     - [ ] test#14 test_get_value
-  - [ ] function DLL_SetValue()
+  - [X] function DLL_SetValue()
     - [X] test#09 test_set_value_inactive
     - [ ] test#15 test_set_value
   - [ ] function DLL_Next()

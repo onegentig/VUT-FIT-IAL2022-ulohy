@@ -148,9 +148,9 @@ List elements  : 1 2 3
 First element  : 1
 Last element   : 3
 Active element : not initialised (no item is active)
-Returned value : 3
-Returned value : 3
-Returned value : 3
+Returned value : 1
+Returned value : 1
+Returned value : 1
 
 
 [test_set_value] Aktualizace hodnot aktivních prvků
@@ -158,10 +158,10 @@ List elements  : 1 2 3
 First element  : 1
 Last element   : 3
 Active element : not initialised (no item is active)
-List elements  : 1 2 3
-First element  : 1
+List elements  : 3 2 3
+First element  : 3
 Last element   : 3
-Active element : 1
+Active element : 3
 List elements  : 1 2 3
 First element  : 1
 Last element   : 3
