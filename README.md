@@ -63,8 +63,8 @@
 - [ ] Doubly Linked List (c206)
   - [X] function DLL_Init()
     - [X] test#01 test_init
-  - [ ] function DLL_Dispose()
-    - [ ] test#25 test_dispose
+  - [X] function DLL_Dispose()
+    - [X] test#25 test_dispose
   - [X] function DLL_InsertFirst()
     - [X] test#06 test_insert_first
     - [X] test#08 test_get_value_inactive

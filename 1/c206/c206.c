@@ -92,7 +92,22 @@ void DLL_Init(DLList *list) {
  * @param list Ukazatel na inicializovanou strukturu dvousměrně vázaného seznamu
  */
 void DLL_Dispose(DLList *list) {
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Odstránenie aktivity zoznamu
+	list->activeElement = NULL;
+
+	// Uloženie ukazateľa na prvý prvok do pomocnej premennej
+	DLLElementPtr element = list->firstElement;
+
+	// Postupné vymazávanie a posúvanie prvého prvku zoznamu, dokým zoznam zostane prázdny.
+	while (element != NULL) {
+		DLLElementPtr nextElement = element->nextElement;
+		free(element);
+		element = nextElement;
+	}
+
+	// Nastavenie ukazateľov na prvý a posledný prvok na NULL
+	list->firstElement = NULL;
+	list->lastElement = NULL;
 }
 
 /**
