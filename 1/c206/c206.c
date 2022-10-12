@@ -314,7 +314,27 @@ void DLL_DeleteAfter(DLList *list) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či má zoznam aktívny prvok nasledujúci prvok
+	if (list->activeElement->nextElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na nasledujúci prvok do pomocnej premennej
+	DLLElementPtr element = list->activeElement->nextElement;
+
+	// Posunutie ukazateľa na nasledujúci prvok na nasledujúci prvok rušeného prvku
+	list->activeElement->nextElement = element->nextElement;
+
+	// Nastavenie ukazateľa na posledný prvok na aktívny, pokiaľ bol rušený prvok posledný
+	if (list->lastElement == element) {
+		list->lastElement = list->activeElement;
+	} else {
+		// Nastavenie ukazateľa na predchádzajúci prvok nasledujúceho prvku
+		element->nextElement->previousElement = list->activeElement;
+	}
+
+	// Uvoľnenie pamäte rušeného prvku
+	free(element);
 }
 
 /**
