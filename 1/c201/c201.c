@@ -177,7 +177,7 @@ void List_DeleteFirst(List *list) {
 		list->activeElement = NULL;
 	}
 
-	// Posunutie ukazateľa prvého prvku zoznamu na druhý prvok
+	// Posunutie ukazateľa prvého prvku zoznamu na nasledujúci prvok
 	list->firstElement = element->nextElement;
 
 	// Uvoľnenie pamäte rušeného prvku
