@@ -197,7 +197,7 @@ void List_DeleteAfter(List *list) {
 		return;
 	}
 
-	// Kontrola, či následuje prvok za aktívnym (je čo rušiť)
+	// Kontrola, či nasleduje prvok za aktívnym (je čo rušiť)
 	if (list->activeElement->nextElement == NULL) {
 		return;
 	}
@@ -205,7 +205,7 @@ void List_DeleteAfter(List *list) {
 	// Uloženie ukazateľa na rušený prvok
 	ListElementPtr element = list->activeElement->nextElement;
 
-	// Posunutie ukazateľa aktívneho prvku zoznamu na následujúci prvok
+	// Posunutie ukazateľa aktívneho prvku zoznamu na nasledujúci prvok
 	list->activeElement->nextElement = element->nextElement;
 
 	// Uvoľnenie pamäte rušeného prvku
@@ -237,7 +237,7 @@ void List_InsertAfter(List *list, int data) {
 	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavenie ukazateľa na následujúci prvok nového prvku (pôvodný následujúci prvok aktívneho prvku)
+	// Nastavenie ukazateľa na nasledujúci prvok nového prvku (pôvodný nasledujúci prvok aktívneho prvku)
 	element->nextElement = list->activeElement->nextElement;
 
 	// Vloženie nového prvku za aktivny prvok
@@ -292,7 +292,7 @@ void List_Next(List *list) {
 		return;
 	}
 
-	// Posunutie ukazateľa aktívneho prvku na následujúci prvok
+	// Posunutie ukazateľa aktívneho prvku na nasledujúci prvok
 	list->activeElement = list->activeElement->nextElement;
 }
 

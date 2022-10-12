@@ -522,7 +522,7 @@ void DLL_Next(DLList *list) {
 		return;
 	}
 
-	// Posun aktivity na následujúci prvok
+	// Posun aktivity na nasledujúci prvok
 	list->activeElement = list->activeElement->nextElement;
 }
 
