@@ -76,10 +76,10 @@
   - [X] function DLL_Last()
     - [X] test#05 test_last_empty
     - [X] test#17 test_last_previous_activity
-  - [ ] function DLL_GetFirst()
+  - [X] function DLL_GetFirst()
     - [X] test#02 test_get_first_empty
     - [X] test#12 test_get_first
-  - [ ] function DLL_GetLast()
+  - [X] function DLL_GetLast()
     - [X] test#03 test_get_last_empty
     - [X] test#13 test_get_last
   - [X] function DLL_DeleteFirst()
