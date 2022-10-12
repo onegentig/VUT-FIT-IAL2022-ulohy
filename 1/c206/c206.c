@@ -205,7 +205,8 @@ void DLL_GetFirst(DLList *list, int *dataPtr) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Vloženie hodnoty dátovej zložky prvého prvku do ukazateľa 'dataPtr'
+	*dataPtr = list->firstElement->data;
 }
 
 /**

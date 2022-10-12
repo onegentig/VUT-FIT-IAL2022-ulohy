@@ -78,7 +78,7 @@
     - [ ] test#17 test_last_previous_activity
   - [ ] function DLL_GetFirst()
     - [X] test#02 test_get_first_empty
-    - [ ] test#12 test_get_first
+    - [X] test#12 test_get_first
   - [ ] function DLL_GetLast()
     - [X] test#03 test_get_last_empty
     - [ ] test#13 test_get_last
