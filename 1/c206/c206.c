@@ -350,7 +350,27 @@ void DLL_DeleteBefore(DLList *list) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Kontrola, či má zoznam aktívny prvok predchádzajúci prvok
+	if (list->activeElement->previousElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na predchádzajúci prvok do pomocnej premennej
+	DLLElementPtr element = list->activeElement->previousElement;
+
+	// Posunutie ukazateľa na predchádzajúci prvok na predchádzajúci prvok rušeného prvku
+	list->activeElement->previousElement = element->previousElement;
+
+	// Nastavenie ukazateľa na prvého prvku na aktívny, pokiaľ bol rušený prvok prvý
+	if (list->firstElement == element) {
+		list->firstElement = list->activeElement;
+	} else {
+		// Nastavenie ukazateľa na nasledujúci prvok predchádzajúceho prvku
+		element->previousElement->nextElement = list->activeElement;
+	}
+
+	// Uvoľnenie pamäte rušeného prvku
+	free(element);
 }
 
 /**

@@ -88,8 +88,8 @@
     - [X] test#22 test_delete_last
   - [X] function DLL_DeleteAfter()
     - [X] test#24 test_delete_after
-  - [ ] function DLL_DeleteBefore()
-    - [ ] test#23 test_delete_before
+  - [X] function DLL_DeleteBefore()
+    - [X] test#23 test_delete_before
   - [X] function DLL_InsertAfter()
     - [X] test#19 test_insert_after
   - [X] function DLL_InsertBefore()
