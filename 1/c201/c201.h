@@ -22,42 +22,42 @@ extern int solved;
 /** Prvek jednosměrně vázaného seznamu. */
 typedef struct ListElement {
 	/** Užitečná data. */
-    int data;
+	int data;
 	/** Ukazatel na následující prvek seznamu. */
-    struct ListElement *nextElement;
-} *ListElementPtr;
+	struct ListElement *nextElement;
+} * ListElementPtr;
 
 /** Jednosměrně vázaný seznam. */
 typedef struct {
 	/** Ukazatel na první prvek seznamu. */
 	ListElementPtr firstElement;
 	/** Ukazatel na aktuální prvek seznamu. */
-    ListElementPtr activeElement;
+	ListElementPtr activeElement;
 } List;
 
-void List_Init( List * );
+void List_Init(List *);
 
-void List_Dispose( List * );
+void List_Dispose(List *);
 
-void List_InsertFirst( List *, int );
+void List_InsertFirst(List *, int);
 
-void List_First( List * );
+void List_First(List *);
 
-void List_GetFirst( List *, int * );
+void List_GetFirst(List *, int *);
 
-void List_DeleteFirst( List * );
+void List_DeleteFirst(List *);
 
-void List_DeleteAfter( List * );
+void List_DeleteAfter(List *);
 
-void List_InsertAfter( List *, int  );
+void List_InsertAfter(List *, int);
 
-void List_Next( List * );
+void List_Next(List *);
 
-void List_GetValue( List *, int * );
+void List_GetValue(List *, int *);
 
-void List_SetValue( List *, int );
+void List_SetValue(List *, int);
 
-int List_IsActive( List * );
+int List_IsActive(List *);
 
 /* Konec hlavičkového souboru c201.h */
 #endif
