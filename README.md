@@ -105,7 +105,7 @@
     - [X] test#11 test_previous_inactive
   - [X] function DLL_IsActive()
     - [X] test#18 test_is_active
-- [ ] ⏰ Deadline 23.10
+- [X] ⏰ Deadline 23.10
 - [ ] ⏰ Hodnocení
 
 Hodnocení: ? / ? <br>（?）
