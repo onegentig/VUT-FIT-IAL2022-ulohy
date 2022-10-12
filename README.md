@@ -75,7 +75,7 @@
     - [X] test#16 test_first_next_activity
   - [X] function DLL_Last()
     - [X] test#05 test_last_empty
-    - [ ] test#17 test_last_previous_activity
+    - [X] test#17 test_last_previous_activity
   - [ ] function DLL_GetFirst()
     - [X] test#02 test_get_first_empty
     - [X] test#12 test_get_first
@@ -99,12 +99,12 @@
   - [X] function DLL_SetValue()
     - [X] test#09 test_set_value_inactive
     - [X] test#15 test_set_value
-  - [ ] function DLL_Next()
+  - [X] function DLL_Next()
     - [X] test#10 test_next_inactive
-  - [ ] function DLL_Previous()
+  - [X] function DLL_Previous()
     - [X] test#11 test_previous_inactive
-  - [ ] function DLL_IsActive()
-    - [ ] test#18 test_is_active
+  - [X] function DLL_IsActive()
+    - [X] test#18 test_is_active
 - [ ] ⏰ Deadline 23.10
 - [ ] ⏰ Hodnocení
 

@@ -382,7 +382,8 @@ void DLL_Previous(DLList *list) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Posun aktivity na predchádzajúci prvok
+	list->activeElement = list->activeElement->previousElement;
 }
 
 /**

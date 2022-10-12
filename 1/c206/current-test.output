@@ -185,9 +185,9 @@ List elements  : 1 2 3
 First element  : 1
 Last element   : 3
 Active element : 3
-Active element : 3
-Active element : 3
-Active element : 3
+Active element : 2
+Active element : 1
+Active element : not initialised (no item is active)
 
 
 [test_is_active] Aktivita seznamu
@@ -199,7 +199,7 @@ Is list element active? No
 Is list element active? Yes
 Is list element active? Yes
 Is list element active? Yes
-Is list element active? No
+Is list element active? Yes
 Is list element active? No
 
 
@@ -238,7 +238,7 @@ Active element : 4
 List elements  : 4
 First element  : 4
 Last element   : 4
-Active element : 4
+Active element : not initialised (no item is active)
 
 
 [test_delete_first] Zrušení prvního prvku v seznamu
@@ -303,7 +303,7 @@ Active element : 3
 List elements  : 1 1 2 2 3 3
 First element  : 1
 Last element   : 3
-Active element : 3
+Active element : 2
 
 
 [test_delete_after] Zrušení prvku po aktivním prvku
