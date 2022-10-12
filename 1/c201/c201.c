@@ -88,7 +88,7 @@ void List_Dispose(List *list) {
 	// Odstránenie aktivity zoznamu
 	list->activeElement = NULL;
 
-	// Postupné vymazávanie a posúvanie prvého prvku zoznamu pomocou, dokým neostane prázdny.
+	// Postupné vymazávanie a posúvanie prvého prvku zoznamu, dokým zoznam zostane prázdny.
 	while (list->firstElement != NULL) {
 		ListElementPtr element = list->firstElement;
 		list->firstElement = element->nextElement;
@@ -117,11 +117,13 @@ void List_InsertFirst(List *list, int data) {
 		return;
 	}
 
-	// Vloženie hodnoty premennej 'data' do nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Vloženie nového prvku na začiatok zoznamu
+	// Nastavenie ukazateľa na nasledujúci prvok nového prvku (pôvodný prvý prvok)
 	element->nextElement = list->firstElement;
+
+	// Vloženie nového prvku na začiatok zoznamu
 	list->firstElement = element;
 }
 
@@ -150,7 +152,7 @@ void List_GetFirst(List *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie ukazateľa na hodnotu prvého prvku do premennej 'dataPtr'
+	// Vloženie hodnoty dátovej zložky prvého prvku do ukazateľa 'dataPtr'
 	*dataPtr = list->firstElement->data;
 }
 
@@ -167,10 +169,10 @@ void List_DeleteFirst(List *list) {
 		return;
 	}
 
-	// Uloženie ukazateľa na prvý prvok do pomocnej premennej
+	// Uloženie ukazateľa na prvý prvok
 	ListElementPtr element = list->firstElement;
 
-	// Pokiaľ je prvý prvok aktívny, aktivita zoznamu sa stráca
+	// Pokiaľ je rušený prvok aktívny, aktivita zoznamu sa stráca
 	if (list->activeElement == element) {
 		list->activeElement = NULL;
 	}
@@ -178,7 +180,7 @@ void List_DeleteFirst(List *list) {
 	// Posunutie ukazateľa prvého prvku zoznamu na druhý prvok
 	list->firstElement = element->nextElement;
 
-	// Uvoľnenie pamäte
+	// Uvoľnenie pamäte rušeného prvku
 	free(element);
 }
 
@@ -190,18 +192,23 @@ void List_DeleteFirst(List *list) {
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_DeleteAfter(List *list) {
-	// Kontrola, či zoznam má aktivny prvok a následuje za ním ďalší prvok
-	if (list->activeElement == NULL || list->activeElement->nextElement == NULL) {
+	// Kontrola, či zoznam má aktivny prvok
+	if (list->activeElement == NULL) {
 		return;
 	}
 
-	// Uloženie ukazateľa na aktívny prvok do pomocnej premennej
+	// Kontrola, či následuje prvok za aktívnym (je čo rušiť)
+	if (list->activeElement->nextElement == NULL) {
+		return;
+	}
+
+	// Uloženie ukazateľa na rušený prvok
 	ListElementPtr element = list->activeElement->nextElement;
 
 	// Posunutie ukazateľa aktívneho prvku zoznamu na následujúci prvok
 	list->activeElement->nextElement = element->nextElement;
 
-	// Uvoľnenie pamäte
+	// Uvoľnenie pamäte rušeného prvku
 	free(element);
 }
 
@@ -227,11 +234,13 @@ void List_InsertAfter(List *list, int data) {
 		return;
 	}
 
-	// Vloženie hodnoty premennej 'data' do nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Vloženie nového prvku za aktivny prvok
+	// Nastavenie ukazateľa na následujúci prvok nového prvku (pôvodný následujúci prvok aktívneho prvku)
 	element->nextElement = list->activeElement->nextElement;
+
+	// Vloženie nového prvku za aktivny prvok
 	list->activeElement->nextElement = element;
 }
 
@@ -249,7 +258,7 @@ void List_GetValue(List *list, int *dataPtr) {
 		return;
 	}
 
-	// Vloženie ukazateľa na hodnotu aktivneho prvku do premennej 'dataPtr'
+	// Vloženie hodnoty dátovej zložky aktivneho prvku do ukazateľa 'dataPtr'
 	*dataPtr = list->activeElement->data;
 }
 
@@ -266,7 +275,7 @@ void List_SetValue(List *list, int data) {
 		return;
 	}
 
-	// Nastavenie novej hodnoty aktivneho prvku
+	// Nastavenie hodnoty dátovej zložky aktívneho prvku
 	list->activeElement->data = data;
 }
 
@@ -283,7 +292,7 @@ void List_Next(List *list) {
 		return;
 	}
 
-	// Posun aktivneho prvku na nasledujuci prvok
+	// Posunutie ukazateľa aktívneho prvku na následujúci prvok
 	list->activeElement = list->activeElement->nextElement;
 }
 
