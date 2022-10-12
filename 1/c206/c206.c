@@ -151,7 +151,7 @@ void DLL_InsertLast(DLList *list, int data) {
 	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavenie ukazateľa na nasledujúci a predchádzajúci prvok nového prvku
+	// Nastavenie ukazateľov na nasledujúci a predchádzajúci prvok nového prvku
 	element->previousElement = list->lastElement;
 	element->nextElement = NULL;
 
@@ -296,7 +296,32 @@ void DLL_InsertAfter(DLList *list, int data) {
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Alokácia pamäte pre nový prvok
+	DLLElementPtr element = (DLLElementPtr)malloc(sizeof(struct DLLElement));
+	if (element == NULL) {
+		DLL_Error();
+		return;
+	}
+
+	// Nastavenie hodnoty dátovej zložky nového prvku
+	element->data = data;
+
+	// Nastavenie ukazateľov na nasledujúci a predchádzajúci prvok
+	element->previousElement = list->activeElement;
+	element->nextElement = list->activeElement->nextElement;
+
+	// Posunutie pôvodne-nasledujúceho prvku (pokiaľ existuje)
+	if (list->activeElement->nextElement != NULL) {
+		list->activeElement->nextElement->previousElement = element;
+	}
+
+	// Vloženie nového prvku za aktívny prvok
+	list->activeElement->nextElement = element;
+
+	// Nastavenie nového prvku zároveň ako posledný prvok, pokiaľ bol aktívny prvok posledný
+	if (list->lastElement == list->activeElement) {
+		list->lastElement = element;
+	}
 }
 
 /**

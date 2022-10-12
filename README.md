@@ -90,8 +90,8 @@
     - [ ] test#24 test_delete_after
   - [ ] function DLL_DeleteBefore()
     - [ ] test#23 test_delete_before
-  - [ ] function DLL_InsertAfter()
-    - [ ] test#19 test_insert_after
+  - [X] function DLL_InsertAfter()
+    - [X] test#19 test_insert_after
   - [ ] function DLL_InsertBefore()
     - [ ] test#20 test_insert_before
   - [X] function DLL_GetValue()
@@ -108,7 +108,7 @@
 - [ ] ⏰ Deadline 23.10
 - [ ] ⏰ Hodnocení
 
-Hodnocení: ? / ? <br>（？）
+Hodnocení: ? / ? <br>（?）
 
 Zadání: [c201](1/c201/README.md), [c203](1/c203/README.md), [c206](1/c206/README.md)
 
@@ -118,6 +118,6 @@ Zadání: [c201](1/c201/README.md), [c203](1/c203/README.md), [c206](1/c206/READ
 - [ ] ⏰ Deadline 13.11
 - [ ] ⏰ Hodnocení
 
-Hodnocení: ? / ? <br>（？）
+Hodnocení: ? / ? <br>（?）
 
 Zadání: ？
