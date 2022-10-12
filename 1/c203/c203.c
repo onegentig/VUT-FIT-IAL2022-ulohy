@@ -112,6 +112,7 @@ void Queue_Init(Queue *queue) {
  * @param index Aktuální index
  */
 int nextIndex(int index) {
+	// Výpočet indexu nasledujúceho prvku so zaistením kruhovosti pola
 	return (index + 1) % QUEUE_SIZE;
 }
 
@@ -200,7 +201,7 @@ void Queue_Dequeue(Queue *queue, char *dataPtr) {
 	// Vloženie hodnoty zo začiatku fronty do ukazateľa 'dataPtr'
 	Queue_Front(queue, dataPtr);
 
-	// Odstránenie prvku
+	// Odstránenie prvku zo začiatku fronty
 	Queue_Remove(queue);
 }
 
@@ -225,6 +226,8 @@ void Queue_Enqueue(Queue *queue, char data) {
 
 	// Vloženie znaku do fronty na volnú pozíciu
 	queue->array[queue->freeIndex] = data;
+
+	// Nastavenie indexu na ďalšiu volnú pozíciu
 	queue->freeIndex = nextIndex(queue->freeIndex);
 }
 
