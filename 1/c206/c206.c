@@ -111,14 +111,14 @@ void DLL_InsertFirst(DLList *list, int data) {
 		return;
 	}
 
-	// Vloženie hodnoty premennej 'data' do nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavenie postupnosti nového prvku
+	// Nastavenie ukazateľa na nasledujúci a predchádzajúci prvok nového prvku
 	element->previousElement = NULL;
 	element->nextElement = list->firstElement;
 
-	// Nastavenie postupnosti pôvodne-prvého prvku
+	// Posunutie pôvodne-prvého prvku (pokiaľ existuje)
 	if (list->firstElement != NULL) {
 		list->firstElement->previousElement = element;
 	}
@@ -126,7 +126,7 @@ void DLL_InsertFirst(DLList *list, int data) {
 	// Vloženie nového prvku na začiatok zoznamu
 	list->firstElement = element;
 
-	// Nastavenie nového prvku ako posledného, pokiaľ je zoznam prázdny
+	// Nastavenie nového prvku zároveň ako posledného, pokiaľ bol zoznam prázdny
 	if (list->lastElement == NULL) {
 		list->lastElement = element;
 	}
@@ -148,14 +148,14 @@ void DLL_InsertLast(DLList *list, int data) {
 		return;
 	}
 
-	// Vloženie hodnoty premennej 'data' do nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavenie postupnosti nového prvku
+	// Nastavenie ukazateľa na nasledujúci a predchádzajúci prvok nového prvku
 	element->previousElement = list->lastElement;
 	element->nextElement = NULL;
 
-	// Nastavenie postupnosti pôvodne-posledného prvku
+	// Posunutie pôvodne-posledného prvku (pokiaľ existuje)
 	if (list->lastElement != NULL) {
 		list->lastElement->nextElement = element;
 	}
@@ -163,7 +163,7 @@ void DLL_InsertLast(DLList *list, int data) {
 	// Vloženie nového prvku na koniec zoznamu
 	list->lastElement = element;
 
-	// Nastavenie nového prvku ako prvého, pokiaľ je zoznam prázdny
+	// Nastavenie nového prvku zároveň ako prvého, pokiaľ bol zoznam prázdny
 	if (list->firstElement == NULL) {
 		list->firstElement = element;
 	}
