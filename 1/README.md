@@ -262,7 +262,7 @@ Index `firstIndex` ukazuje vždy na první prvek ve front, index `freeIndex` uka
 
 ### Referenční výstup testu
 
-</details>
+<details>
 <summary>c203-test.output</summary>
 
 ```text
