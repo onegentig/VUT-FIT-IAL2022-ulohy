@@ -218,12 +218,13 @@ void DLL_GetFirst(DLList *list, int *dataPtr) {
  */
 void DLL_GetLast(DLList *list, int *dataPtr) {
 	// Kontrola, či je zoznam neprázdny
-	if (list->firstElement == NULL) {
+	if (list->lastElement == NULL) {
 		DLL_Error();
 		return;
 	}
 
-	solved = FALSE; /* V případě řešení, smažte tento řádek! */
+	// Vloženie hodnoty dátovej zložky posledného prvku do ukazateľa 'dataPtr'
+	*dataPtr = list->lastElement->data;
 }
 
 /**

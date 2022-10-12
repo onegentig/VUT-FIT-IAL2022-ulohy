@@ -81,7 +81,7 @@
     - [X] test#12 test_get_first
   - [ ] function DLL_GetLast()
     - [X] test#03 test_get_last_empty
-    - [ ] test#13 test_get_last
+    - [X] test#13 test_get_last
   - [ ] function DLL_DeleteFirst()
     - [ ] test#21 test_delete_first
   - [ ] function DLL_DeleteLast()
