@@ -18,7 +18,7 @@
 
 Hodnotenie: ? / ? <br>（?）
 
-Zadanie: [merged 1/README.md](1/ZADANI.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249030)
+Zadanie: [merged 1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249030)
 
 ## Úloha 2
 
