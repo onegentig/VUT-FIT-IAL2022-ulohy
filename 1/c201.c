@@ -1,7 +1,7 @@
 /**
  * @file c201.c
- * @author GitHub User (xplagi00@stud.fit.vutbr.cz)
- * @brief Implementace jednosměrného seznamu (Singly-Linked List ADT)
+ * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @brief Implementácia jednosmerného zoznamu (Singly-Linked List ADT)
  * @date 2022-10-12
  *
  */
@@ -15,8 +15,8 @@ int error_flag;
 int solved;
 
 /**
- * @brief Vytiskne upozornění na to, že došlo k chybě a nastaví error_flag na 1
- *
+ * Vytiskne upozornění na to, že došlo k chybě. Nastaví error_flag na logickou 1.
+ * Tato funkce bude volána z některých dále implementovaných operací.
  */
 void List_Error() {
 	printf("*ERROR* The program has performed an illegal operation.\n");
@@ -24,8 +24,13 @@ void List_Error() {
 }
 
 /**
- * @brief Inicializuje seznam
+ * Provede inicializaci seznamu list před jeho prvním použitím (tzn. žádná
+ * z následujících funkcí nebude volána nad neinicializovaným seznamem).
+ * Tato inicializace se nikdy nebude provádět nad již inicializovaným
+ * seznamem, a proto tuto možnost neošetřujte. Vždy předpokládejte,
+ * že neinicializované proměnné mají nedefinovanou hodnotu.
  *
+ * @param list Ukazatel na strukturu jednosměrně vázaného seznamu
  */
 void List_Init(List *list) {
 	list->firstElement = NULL;
@@ -33,15 +38,17 @@ void List_Init(List *list) {
 }
 
 /**
- * @brief Zruší všechny prvky seznamu a uvede ho do stavu, v jakém se nacházel po inicializaci
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ * Zruší všechny prvky seznamu list a uvede seznam list do stavu, v jakém se nacházel
+ * po inicializaci. Veškerá paměť používaná prvky seznamu list bude korektně
+ * uvolněna voláním operace free.
  *
- */
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ **/
 void List_Dispose(List *list) {
-	// Odstranění aktivity seznamu
+	// Odstránenie aktivity zoznamu
 	list->activeElement = NULL;
 
-	// Postupní odstraňování a posouvání prvního prvku seznamu, dokud seznam nezůstane prázdný
+	// Postupné vymazávanie a posúvanie prvého prvku zoznamu, dokým zoznam zostane prázdny.
 	while (list->firstElement != NULL) {
 		ListElementPtr element = list->firstElement;
 		list->firstElement = element->nextElement;
@@ -50,190 +57,208 @@ void List_Dispose(List *list) {
 }
 
 /**
- * @brief Vloží prvek s hodnotou data na začátek seznamu
+ * Vloží prvek s hodnotou data na začátek seznamu list.
+ * V případě, že není dostatek paměti pro nový prvek při operaci malloc,
+ * volá funkci List_Error().
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Hodnota k vložení na začátek seznamu
- *
  */
 void List_InsertFirst(List *list, int data) {
-	// Alokace paměti pro nový prvek
+	// Alokácia pamäte pre nový prvok
 	ListElementPtr element = (ListElementPtr)malloc(sizeof(struct ListElement));
 	if (element == NULL) {
 		List_Error();
 		return;
 	}
 
-	// Nastavení hodnoty datové složky nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavení ukazatele na další prvek nového prvku (původní první prvek)
+	// Nastavenie ukazateľa na nasledujúci prvok nového prvku (pôvodný prvý prvok)
 	element->nextElement = list->firstElement;
 
-	// Vložení nového prvku na začátek seznamu
+	// Vloženie nového prvku na začiatok zoznamu
 	list->firstElement = element;
 }
 
 /**
- * @brief Nastaví aktivitu seznamu na jeho první prvek
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ * Nastaví aktivitu seznamu list na jeho první prvek.
+ * Funkci implementujte jako jediný příkaz, aniž byste testovali,
+ * zda je seznam list prázdný.
  *
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_First(List *list) {
 	list->activeElement = list->firstElement;
 }
 
 /**
- * @brief Vloží hodnotu prvního prvku seznamu do ukazatele
+ * Prostřednictvím parametru dataPtr vrátí hodnotu prvního prvku seznamu list.
+ * Pokud je seznam list prázdný, volá funkci List_Error().
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param dataPtr Ukazatel na cílovou proměnnou
- *
  */
 void List_GetFirst(List *list, int *dataPtr) {
-	// Kontrola, zda je seznam neprázdný
+	// Kontrola, či je zoznam neprázdny
 	if (list->firstElement == NULL) {
 		List_Error();
 		return;
 	}
 
-	// Vložení hodnoty datové složky prvního prvku do cílové proměnné
+	// Vloženie hodnoty dátovej zložky prvého prvku do cielovej premennej
 	*dataPtr = list->firstElement->data;
 }
 
 /**
- * @brief Zruší první prvek seznamu
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ * Zruší první prvek seznamu list a uvolní jím používanou paměť.
+ * Pokud byl rušený prvek aktivní, aktivita seznamu se ztrácí.
+ * Pokud byl seznam list prázdný, nic se neděje.
  *
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_DeleteFirst(List *list) {
-	// Kontrola, zda je seznam neprázdný
+	// Kontrola, či je zoznam neprázdny
 	if (list->firstElement == NULL) {
 		return;
 	}
 
-	// Uložení ukazatele na první prvek do pomocné proměnné
+	// Uloženie ukazateľa na prvý prvok
 	ListElementPtr element = list->firstElement;
 
-	// Pokud je rušený prvek aktivní, aktivita seznamu se ztratí
+	// Pokiaľ je rušený prvok aktívny, aktivita zoznamu sa stráca
 	if (list->activeElement == element) {
 		list->activeElement = NULL;
 	}
 
-	// Posunutí ukazatele prvního prvku seznamu na následující prvek
+	// Posunutie ukazateľa prvého prvku zoznamu na nasledujúci prvok
 	list->firstElement = element->nextElement;
 
-	// Uvolnění paměti rušeného prvku
+	// Uvoľnenie pamäte rušeného prvku
 	free(element);
 }
 
 /**
- * @brief Zruší prvek seznamu za aktivním prvkem
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ * Zruší prvek seznamu list za aktivním prvkem a uvolní jím používanou paměť.
+ * Pokud není seznam list aktivní nebo pokud je aktivní poslední prvek seznamu list,
+ * nic se neděje.
  *
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_DeleteAfter(List *list) {
-	// Kontrola, zda má seznam aktivní prvek
+	// Kontrola, či zoznam má aktivny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
 
-	// Kontrola, zda následuje prvek za aktivním prvkem (je co rušit)
+	// Kontrola, či nasleduje prvok za aktívnym (je čo rušiť)
 	if (list->activeElement->nextElement == NULL) {
 		return;
 	}
 
-	// Uložení ukazatele na rušený prvek do pomocné proměnné
+	// Uloženie ukazateľa na rušený prvok
 	ListElementPtr element = list->activeElement->nextElement;
 
-	// Posunutí ukazatele aktivního prvku seznamu na další prvek
+	// Posunutie ukazateľa aktívneho prvku zoznamu na nasledujúci prvok
 	list->activeElement->nextElement = element->nextElement;
 
-	// Uvolnění paměti rušeného prvku
+	// Uvoľnenie pamäte rušeného prvku
 	free(element);
 }
 
 /**
- * @brief Vloží prvek za aktivní prvek seznamu
+ * Vloží prvek s hodnotou data za aktivní prvek seznamu list.
+ * Pokud nebyl seznam list aktivní, nic se neděje!
+ * V případě, že není dostatek paměti pro nový prvek při operaci malloc,
+ * zavolá funkci List_Error().
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Hodnota k vložení do seznamu za právě aktivní prvek
- *
  */
 void List_InsertAfter(List *list, int data) {
-	// Kontrola, zda má seznam aktivní prvek
+	// Kontrola, či zoznam má aktivny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
 
-	// Alokace paměti pro nový prvek
+	// Alokácia pamäte pre nový prvok
 	ListElementPtr element = (ListElementPtr)malloc(sizeof(struct ListElement));
 	if (element == NULL) {
 		List_Error();
 		return;
 	}
 
-	// Nastavení hodnoty datové složky nového prvku
+	// Nastavenie hodnoty dátovej zložky nového prvku
 	element->data = data;
 
-	// Nastavení ukazatele na následující prvek nového prvku (původní následující prvek aktivního prvku)
+	// Nastavenie ukazateľa na nasledujúci prvok nového prvku (pôvodný nasledujúci prvok aktívneho prvku)
 	element->nextElement = list->activeElement->nextElement;
 
-	// Vložení nového prvku za aktivní prvek
+	// Vloženie nového prvku za aktivny prvok
 	list->activeElement->nextElement = element;
 }
 
 /**
- * @brief Vloží hodnotu aktivního prvku seznamu do ukazatele
+ * Prostřednictvím parametru dataPtr vrátí hodnotu aktivního prvku seznamu list.
+ * Pokud seznam není aktivní, zavolá funkci List_Error().
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param dataPtr Ukazatel na cílovou proměnnou
- *
  */
 void List_GetValue(List *list, int *dataPtr) {
-	// Kontrola, zda má seznam aktivní prvek
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		List_Error();
 		return;
 	}
 
-	// Vložení hodnoty datové složky aktivního prvku do cílové proměnné
+	// Vloženie hodnoty dátovej zložky aktivneho prvku do cielovej premennej
 	*dataPtr = list->activeElement->data;
 }
 
 /**
- * @brief Přepíše data aktivního prvku seznamu
+ * Přepíše data aktivního prvku seznamu list hodnotou data.
+ * Pokud seznam list není aktivní, nedělá nic!
+ *
  * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  * @param data Nová hodnota právě aktivního prvku
- *
  */
 void List_SetValue(List *list, int data) {
-	// Kontrola, zda má seznam aktivní prvek
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
 
-	// Nastavení hodnoty datové složky aktivního prvku
+	// Nastavenie hodnoty dátovej zložky aktívneho prvku
 	list->activeElement->data = data;
 }
 
 /**
- * @brief Posune aktivitu na následující prvek seznamu
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
+ * Posune aktivitu na následující prvek seznamu list.
+ * Všimněte si, že touto operací se může aktivní seznam stát neaktivním.
+ * Pokud není předaný seznam list aktivní, nedělá funkce nic.
  *
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 void List_Next(List *list) {
-	// Kontrola, zda má seznam aktivní prvek
+	// Kontrola, či zoznam má aktívny prvok
 	if (list->activeElement == NULL) {
 		return;
 	}
 
-	// Posunutí ukazatele aktivní položky na následující položku
+	// Posunutie ukazateľa aktívneho prvku na nasledujúci prvok
 	list->activeElement = list->activeElement->nextElement;
 }
 
 /**
- * @brief Zjistí, zda je seznam aktivní
- * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
- * @return Nenulová hodnota, pokud je seznam aktivní, jinak 0
+ * Je-li seznam list aktivní, vrací nenulovou hodnotu, jinak vrací 0.
+ * Tuto funkci je vhodné implementovat jedním příkazem return.
  *
+ * @param list Ukazatel na inicializovanou strukturu jednosměrně vázaného seznamu
  */
 int List_IsActive(List *list) {
 	return list->activeElement != NULL;
 }
+
+/* Konec c201.c */
