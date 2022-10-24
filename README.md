@@ -6,7 +6,7 @@
 
 ## Úloha 1
 
-Hodnotenie: 10 / 10 <br>（:vutez:）
+Hodnotenie: 10 / 10 <br>（<img alt=":vutez" src="https://cdn.discordapp.com/emojis/650288381476995102.png" height="16px" />）
 
 Zadanie: [1/README.md](1/ZADANI.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249030)
 
