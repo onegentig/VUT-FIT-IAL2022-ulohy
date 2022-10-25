@@ -8,13 +8,14 @@
 
 Hodnotenie: 10 / 10 <br>（<img alt=":vutez" src="https://cdn.discordapp.com/emojis/650288381476995102.png" height="16px" />）
 
-Zadanie: [1/README.md](1/ZADANI.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249030)
+Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249030)
 
 ## Úloha 2
 
-- [ ] ⏰ Zadanie 24.10.
+- [X] ⏰ Zadanie 24.10.
+- [ ] Prejsť si zadanie
 - [ ] ⏰ Deadline 13.11
 
 Hodnotenie: ? / ? <br>（?）
 
-Zadanie: ？
+Zadanie: [2/README.md](2/README.md), originál [MOODLE](https://moodle.vut.cz/mod/folder/view.php?id=249031)
