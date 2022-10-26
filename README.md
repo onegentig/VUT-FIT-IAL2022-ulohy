@@ -13,7 +13,33 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
 ## Úloha 2
 
 - [X] ⏰ Zadanie 24.10.
-- [ ] Prejsť si zadanie
+- [ ] hashtable
+  - [ ] function ht_init()
+  - [ ] function ht_search()
+  - [ ] function ht_insert()
+  - [ ] function ht_get()
+  - [ ] function ht_delete()
+  - [ ] function ht_delete_all()
+- [ ] recursive binart tree
+  - [ ] function bst_init()
+  - [ ] function bst_search()
+  - [ ] function bst_insert()
+  - [ ] function bst_replace_by_rightmost()
+  - [ ] function bst_delete()
+  - [ ] function bst_dispose()
+  - [ ] function bst_preorder()
+  - [ ] function bst_inorder()
+  - [ ] function bst_postorder()
+- [ ] iterative binary tree
+  - [ ] function bst_init()
+  - [ ] function bst_search()
+  - [ ] function bst_insert()
+  - [ ] function bst_replace_by_rightmost()
+  - [ ] function bst_delete()
+  - [ ] function bst_dispose()
+  - [ ] function bst_preorder()
+  - [ ] function bst_inorder()
+  - [ ] function bst_postorder()
 - [ ] ⏰ Deadline 13.11
 
 Hodnotenie: ? / ? <br>（?）
