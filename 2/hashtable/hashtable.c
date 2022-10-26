@@ -44,7 +44,7 @@ void ht_init(ht_table_t *table) {
 ht_item_t *ht_search(ht_table_t *table, char *key) {
 	ht_item_t *item = (*table)[get_hash(key)];
 	while (item != NULL) {
-		if (strcmp(item->key, key) == 0) {
+		if (item->key == key) {
 			return item;
 		}
 		item = item->next;
