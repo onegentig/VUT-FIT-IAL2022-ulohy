@@ -49,7 +49,7 @@ ht_item_t *ht_search(ht_table_t *table, char *key) {
 		}
 		item = item->next;
 	}
-	
+
 	return NULL;
 }
 
@@ -62,6 +62,20 @@ ht_item_t *ht_search(ht_table_t *table, char *key) {
  * synonym zvoľte najefektívnejšiu možnosť a vložte prvok na začiatok zoznamu.
  */
 void ht_insert(ht_table_t *table, char *key, float value) {
+	ht_item_t *item = ht_search(table, key);
+
+	// Prepis hodnoty, pokiaľ prvok s daným kľúčom už existuje
+	if (item != NULL) {
+		item->value = value;
+		return;
+	}
+
+	// Vytvorenie nového prvku
+	ht_item_t *newItem = malloc(sizeof(ht_item_t));
+	newItem->key = key;
+	newItem->value = value;
+	newItem->next = (*table)[get_hash(key)];
+	(*table)[get_hash(key)] = newItem;
 }
 
 /*
