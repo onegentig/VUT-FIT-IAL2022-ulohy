@@ -87,6 +87,11 @@ void ht_insert(ht_table_t *table, char *key, float value) {
  * Pri implementácii využite funkciu ht_search.
  */
 float *ht_get(ht_table_t *table, char *key) {
+	ht_item_t *item = ht_search(table, key);
+	if (item != NULL) {
+		return item->value;
+	}
+
 	return NULL;
 }
 
