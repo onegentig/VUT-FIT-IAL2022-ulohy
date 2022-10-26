@@ -32,7 +32,7 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
-  return false;
+	return false;
 }
 
 /*
@@ -149,8 +149,7 @@ void bst_inorder(bst_node_t *tree) {
  * Funkciu implementujte iteratívne pomocou zásobníkov uzlov a bool hodnôt a bez použitia
  * vlastných pomocných funkcií.
  */
-void bst_leftmost_postorder(bst_node_t *tree, stack_bst_t *to_visit,
-                            stack_bool_t *first_visit) {
+void bst_leftmost_postorder(bst_node_t *tree, stack_bst_t *to_visit, stack_bool_t *first_visit) {
 }
 
 /*

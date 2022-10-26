@@ -20,12 +20,12 @@ int HT_SIZE = MAX_HT_SIZE;
  * rovnomerne po všetkých indexoch. Zamyslite sa nad kvalitou zvolenej funkcie.
  */
 int get_hash(char *key) {
-  int result = 1;
-  int length = strlen(key);
-  for (int i = 0; i < length; i++) {
-    result += key[i];
-  }
-  return (result % HT_SIZE);
+	int result = 1;
+	int length = strlen(key);
+	for (int i = 0; i < length; i++) {
+		result += key[i];
+	}
+	return (result % HT_SIZE);
 }
 
 /*
@@ -41,7 +41,7 @@ void ht_init(ht_table_t *table) {
  * hodnotu NULL.
  */
 ht_item_t *ht_search(ht_table_t *table, char *key) {
-  return NULL;
+	return NULL;
 }
 
 /*
@@ -64,7 +64,7 @@ void ht_insert(ht_table_t *table, char *key, float value) {
  * Pri implementácii využite funkciu ht_search.
  */
 float *ht_get(ht_table_t *table, char *key) {
-  return NULL;
+	return NULL;
 }
 
 /*
