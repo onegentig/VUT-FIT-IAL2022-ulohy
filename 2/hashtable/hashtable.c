@@ -1,11 +1,9 @@
-/*
- * Tabuľka s rozptýlenými položkami
+/**
+ * @file hashtable.c
+ * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @brief Tabuľka s rozptýlenými položkami
+ * @date 2022-xx-xx
  *
- * S využitím dátových typov zo súboru hashtable.h a pripravených kostier
- * funkcií implementujte tabuľku s rozptýlenými položkami s explicitne
- * zreťazenými synonymami.
- *
- * Pri implementácii uvažujte veľkosť tabuľky HT_SIZE.
  */
 
 #include "hashtable.h"
@@ -32,6 +30,9 @@ int get_hash(char *key) {
  * Inicializácia tabuľky — zavolá sa pred prvým použitím tabuľky.
  */
 void ht_init(ht_table_t *table) {
+	for (int i = 0; i < HT_SIZE; i++) {
+		(*table)[i] = NULL;
+	}
 }
 
 /*
