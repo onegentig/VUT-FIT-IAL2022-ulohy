@@ -104,7 +104,8 @@ float *ht_get(ht_table_t *table, char *key) {
  * Pri implementácii NEVYUŽÍVAJTE funkciu ht_search.
  */
 void ht_delete(ht_table_t *table, char *key) {
-	ht_item_t *item = (*table)[get_hash(key)];
+	int hash = get_hash(key);
+	ht_item_t *item = (*table)[hash];
 	ht_item_t *parent = NULL;
 
 	bool found = false;
@@ -113,7 +114,7 @@ void ht_delete(ht_table_t *table, char *key) {
 		if (item->key == key) {
 			if (parent == NULL) {
 				// Prvok je na začiatku zoznamu
-				(*table)[get_hash(key)] = item->next;
+				(*table)[hash] = item->next;
 			} else {
 				// Prvok je na konci alebo uprostred zoznamu
 				parent->next = item->next;
