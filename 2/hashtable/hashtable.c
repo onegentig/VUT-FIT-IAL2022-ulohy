@@ -138,4 +138,23 @@ void ht_delete(ht_table_t *table, char *key) {
  * inicializácii.
  */
 void ht_delete_all(ht_table_t *table) {
+	for (int i = 0; i < HT_SIZE; i++) {
+		ht_item_t *item = (*table)[i];
+
+		// Žiaden prvok k indexu neexistuje
+		if (item == NULL) {
+			continue;
+		}
+
+		// Postupné odstraňovanie a uvoľňovanie pamäte prvkov
+		ht_item_t *nextItem = item->next;
+		while (nextItem != NULL) {
+			item = nextItem;
+			nextItem = item->next;
+			free(item);
+		}
+
+		// Odstránenie ukazateľa na prvok
+		(*table)[i] = NULL;
+	}
 }

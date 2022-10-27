@@ -195,21 +195,21 @@ Maximum hash collisions: 2
 [test_delete_all] Delete all the items
 
 ------------HASH TABLE--------------
-0: (Ethereum,3208.67)
+0: 
 1: 
 2: 
-3: (Avalanche,47.03)(Uniswap,21.68)(Dogecoin,0.22)
-4: (Chainlink,21.90)(Terra,30.67)(XRP,0.93)
-5: (Litecoin,156.87)
+3: 
+4: 
+5: 
 6: 
 7: 
-8: (Cardano,1.82)
-9: (Solana,134.50)(Binance Coin,409.15)
-10: (Tether,0.86)
-11: (Bitcoin,53247.71)
-12: (USD Coin,0.86)(Polkadot,34.99)
+8: 
+9: 
+10: 
+11: 
+12: 
 ------------------------------------
-Total items in hash table: 15
-Maximum hash collisions: 2
+Total items in hash table: 0
+Maximum hash collisions: 0
 ------------------------------------
 
