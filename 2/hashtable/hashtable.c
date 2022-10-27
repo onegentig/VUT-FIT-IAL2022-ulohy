@@ -46,7 +46,7 @@ ht_item_t *ht_search(ht_table_t *table, char *key) {
 
 	// Postupné prechádzanie zoznamu
 	while (item != NULL) {
-		if (item->key == key) {
+		if (strcmp(item->key, key) == 0) {
 			// Prvok nájdený
 			return item;
 		}
@@ -120,7 +120,7 @@ void ht_delete(ht_table_t *table, char *key) {
 	bool found = false;
 	while (item != NULL && !found) {
 		// Prvok nájdený
-		if (item->key == key) {
+		if (strcmp(item->key, key) == 0) {
 			if (parent == NULL) {
 				// Prvok je na začiatku zoznamu
 				(*table)[hash] = item->next;
