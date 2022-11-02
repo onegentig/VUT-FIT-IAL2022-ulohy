@@ -238,6 +238,12 @@ void bst_dispose(bst_node_t **tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_preorder(bst_node_t *tree) {
+	// Kontrola, či je strom neprázdny
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
 
 /*
@@ -248,6 +254,12 @@ void bst_preorder(bst_node_t *tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_inorder(bst_node_t *tree) {
+	// Kontrola, či je strom neprázdny
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
 /*
  * Postorder prechod stromom.
@@ -257,4 +269,10 @@ void bst_inorder(bst_node_t *tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_postorder(bst_node_t *tree) {
+	// Kontrola, či je strom neprázdny
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
