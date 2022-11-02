@@ -81,6 +81,7 @@ void ht_insert(ht_table_t *table, char *key, float value) {
 		return;
 	}
 
+	// Vloženie nového prvku do tabuľky
 	newItem->key = key;
 	newItem->value = value;
 	newItem->next = (*table)[get_hash(key)];
