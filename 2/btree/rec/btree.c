@@ -18,6 +18,7 @@
  * možné toto detegovať vo funkcii.
  */
 void bst_init(bst_node_t **tree) {
+	*tree = NULL;
 }
 
 /*
