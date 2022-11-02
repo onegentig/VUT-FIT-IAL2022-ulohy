@@ -1,8 +1,9 @@
-/*
- * Binárny vyhľadávací strom — rekurzívna varianta
+/**
+ * @file rec/btree.c
+ * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @brief Binárny vyhľadávací strom — rekurzívna varianta
+ * @date 2022-xx-xx
  *
- * S využitím dátových typov zo súboru btree.h a pripravených kostier funkcií
- * implementujte binárny vyhľadávací strom pomocou rekurzie.
  */
 
 #include "../btree.h"
