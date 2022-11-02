@@ -166,8 +166,50 @@ void bst_delete(bst_node_t **tree, char key) {
 
 	// Aktuálny kľúč
 	char currentKey = (*tree)->key;
+	bool hasLeftSubtree = (*tree)->left != NULL;
+	bool hasRightSubtree = (*tree)->right != NULL;
 
-	// TODO: Rekurzívne odstránenie
+	// Zhodný kľúč - odstránenie uzla
+	if (currentKey == key) {
+
+		// Uzol nemá potomkov - list
+		if (!hasLeftSubtree && !hasRightSubtree) {
+			free(*tree);
+			*tree = NULL;
+			return;
+		}
+
+		// Uzol má podstrom naľavo
+		if (hasLeftSubtree && !hasRightSubtree) {
+			bst_node_t *temp = *tree;
+			*tree = (*tree)->left;
+			free(temp);
+			return;
+		}
+
+		// Uzol má podstrom napravo
+		if (!hasLeftSubtree && hasRightSubtree) {
+			bst_node_t *temp = *tree;
+			*tree = (*tree)->right;
+			free(temp);
+			return;
+		}
+
+		// Uzol má podstromy na oboch stranách
+		if (hasLeftSubtree && hasRightSubtree) {
+			return bst_replace_by_rightmost(*tree, &(*tree)->left);
+		}
+	}
+
+	// Rekurzívne odstránenie z ľavého podstromu
+	if (key < currentKey && hasLeftSubtree) {
+		return bst_delete(&(*tree)->left, key);
+	}
+
+	// Rekurzívne odstránenie z pravého podstromu
+	if (key > currentKey && hasRightSubtree) {
+		return bst_delete(&(*tree)->right, key);
+	}
 }
 
 /*
