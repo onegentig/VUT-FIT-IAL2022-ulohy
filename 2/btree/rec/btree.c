@@ -216,9 +216,24 @@ void bst_delete(bst_node_t **tree, char key) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_dispose(bst_node_t **tree) {
+	// Prázdny strom - nie je čo rušiť
 	if (*tree == NULL) {
 		return;
 	}
+
+	// Rekurzívne zrušenie ľavého podstromu
+	if ((*tree)->left != NULL) {
+		bst_dispose(&(*tree)->left);
+	}
+
+	// Rekurzívne zrušenie pravého podstromu
+	if ((*tree)->right != NULL) {
+		bst_dispose(&(*tree)->right);
+	}
+
+	// Uvoľnenie pamäte aktuálneho uzla
+	free(*tree);
+	*tree = NULL;
 }
 
 /*

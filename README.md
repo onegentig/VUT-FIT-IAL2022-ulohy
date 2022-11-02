@@ -50,9 +50,9 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#13 test_tree_delete_both_subtrees
     - [X] test#14 test_tree_delete_missing
     - [X] test#15 test_tree_delete_root
-  - [ ] function bst_dispose()
+  - [X] function bst_dispose()
     - [X] test#02 test_tree_dispose_empty
-    - [ ] test#16 test_tree_dispose_filled
+    - [X] test#16 test_tree_dispose_filled
   - [ ] function bst_preorder()
     - [ ] test#17 test_tree_preorder
   - [ ] function bst_inorder()

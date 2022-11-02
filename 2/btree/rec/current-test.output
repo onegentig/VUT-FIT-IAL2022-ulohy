@@ -624,35 +624,7 @@ Binary tree structure:
 
 Binary tree structure:
 
-           +-[O,16]
-           |
-        +-[N,14]
-        |  |
-        |  +-[M,13]
-        |
-     +-[L,12]
-     |  |
-     |  |  +-[K,11]
-     |  |  |
-     |  +-[J,10]
-     |     |
-     |     +-[I,9]
-     |
-  +-[H,8]
-     |
-     |     +-[G,7]
-     |     |
-     |  +-[F,6]
-     |  |  |
-     |  |  +-[E,5]
-     |  |
-     +-[D,4]
-        |
-        |  +-[C,3]
-        |  |
-        +-[B,2]
-           |
-           +-[A,1]
+Tree is empty
 
 
 [test_tree_preorder] Traverse the tree using preorder
