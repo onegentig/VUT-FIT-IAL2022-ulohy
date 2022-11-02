@@ -137,6 +137,15 @@ void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
  * použitia vlastných pomocných funkcií.
  */
 void bst_delete(bst_node_t **tree, char key) {
+	// Koreň stromu je prázdny
+	if (*tree == NULL) {
+		return;
+	}
+
+	// Aktuálny kľúč
+	char currentKey = (*tree)->key;
+
+	// TODO: Rekurzívne odstránenie
 }
 
 /*
