@@ -243,7 +243,10 @@ void bst_preorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Preorder tree walk: koreň -> ľavý podstrom -> pravý podstrom
+	bst_print_node(tree);
+	bst_preorder(tree->left);
+	bst_preorder(tree->right);
 }
 
 /*
@@ -259,7 +262,10 @@ void bst_inorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Inorder tree walk: ľavý podstrom -> koreň -> pravý podstrom
+	bst_inorder(tree->left);
+	bst_print_node(tree);
+	bst_inorder(tree->right);
 }
 /*
  * Postorder prechod stromom.
@@ -274,5 +280,8 @@ void bst_postorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Postorder tree walk: ľavý podstrom -> pravý podstrom -> koreň
+	bst_postorder(tree->left);
+	bst_postorder(tree->right);
+	bst_print_node(tree);
 }

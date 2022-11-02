@@ -628,7 +628,7 @@ Tree is empty
 
 
 [test_tree_preorder] Traverse the tree using preorder
-
+[D,1][B,2][A,3][C,4][E,5]
 Binary tree structure:
 
      +-[E,5]
@@ -643,7 +643,7 @@ Binary tree structure:
 
 
 [test_tree_inorder] Traverse the tree using inorder
-
+[A,3][B,2][C,4][D,1][E,5]
 Binary tree structure:
 
      +-[E,5]
@@ -658,7 +658,7 @@ Binary tree structure:
 
 
 [test_tree_postorder] Traverse the tree using postorder
-
+[A,3][C,4][B,2][E,5][D,1]
 Binary tree structure:
 
      +-[E,5]

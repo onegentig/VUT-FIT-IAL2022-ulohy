@@ -53,12 +53,12 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
   - [X] function bst_dispose()
     - [X] test#02 test_tree_dispose_empty
     - [X] test#16 test_tree_dispose_filled
-  - [ ] function bst_preorder()
-    - [ ] test#17 test_tree_preorder
-  - [ ] function bst_inorder()
-    - [ ] test#18 test_tree_inorder
-  - [ ] function bst_postorder()
-    - [ ] test#19 test_tree_postorder
+  - [X] function bst_preorder()
+    - [X] test#17 test_tree_preorder
+  - [X] function bst_inorder()
+    - [X] test#18 test_tree_inorder
+  - [X] function bst_postorder()
+    - [X] test#19 test_tree_postorder
 - [ ] iterative binary search tree
   - [ ] function bst_init()
     - [ ] test#01 test_tree_init
