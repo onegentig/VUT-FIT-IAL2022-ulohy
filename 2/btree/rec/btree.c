@@ -32,12 +32,11 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
-	// Koreň stromu je prázdny
+	// Strom je prázdny
 	if (tree == NULL) {
 		return false;
 	}
 
-	// Aktuálny kľúč
 	char currentKey = tree->key;
 
 	// Uzol nájdený
@@ -56,7 +55,6 @@ bool bst_search(bst_node_t *tree, char key, int *value) {
 		return bst_search(tree->right, key, value);
 	}
 
-	// Uzol nebol nájdený
 	return false;
 }
 
@@ -124,7 +122,7 @@ void bst_insert(bst_node_t **tree, char key, int value) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
-	// Prázdny strom (pre istotu)
+	// Kontrola, či je strom neprázdny (pre istotu)
 	if (*tree == NULL) {
 		return;
 	}
@@ -166,7 +164,6 @@ void bst_delete(bst_node_t **tree, char key) {
 		return;
 	}
 
-	// Aktuálny kľúč
 	char currentKey = (*tree)->key;
 	bool hasLeftSubtree = (*tree)->left != NULL;
 	bool hasRightSubtree = (*tree)->right != NULL;
@@ -181,7 +178,7 @@ void bst_delete(bst_node_t **tree, char key) {
 			return;
 		}
 
-		// Uzol má práve jeden podstrom (napravo alebo naľavo)
+		// Uzol má jeden podstrom
 		if (hasLeftSubtree ^ hasRightSubtree) {
 			bst_node_t *temp = *tree;
 			*tree = hasLeftSubtree ? (*tree)->left : (*tree)->right;

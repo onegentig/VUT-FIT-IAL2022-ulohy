@@ -43,7 +43,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#06 test_tree_update_root
     - [X] test#07 test_tree_insert_many
   - [X] function bst_replace_by_rightmost()
-  - [ ] function bst_delete()
+  - [X] function bst_delete()
     - [X] test#10 test_tree_delete_leaf
     - [X] test#11 test_tree_delete_left_subtree
     - [X] test#12 test_tree_delete_right_subtree
