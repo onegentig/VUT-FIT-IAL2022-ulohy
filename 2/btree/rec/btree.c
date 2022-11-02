@@ -179,18 +179,10 @@ void bst_delete(bst_node_t **tree, char key) {
 			return;
 		}
 
-		// Uzol má podstrom naľavo
-		if (hasLeftSubtree && !hasRightSubtree) {
+		// Uzol má práve jeden podstrom (napravo alebo naľavo)
+		if (hasLeftSubtree ^ hasRightSubtree) {
 			bst_node_t *temp = *tree;
-			*tree = (*tree)->left;
-			free(temp);
-			return;
-		}
-
-		// Uzol má podstrom napravo
-		if (!hasLeftSubtree && hasRightSubtree) {
-			bst_node_t *temp = *tree;
-			*tree = (*tree)->right;
+			*tree = hasLeftSubtree ? (*tree)->left : (*tree)->right;
 			free(temp);
 			return;
 		}
