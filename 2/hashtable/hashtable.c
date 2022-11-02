@@ -77,6 +77,10 @@ void ht_insert(ht_table_t *table, char *key, float value) {
 
 	// Vytvorenie nového prvku
 	ht_item_t *newItem = malloc(sizeof(ht_item_t));
+	if (newItem == NULL) {
+		return;
+	}
+
 	newItem->key = key;
 	newItem->value = value;
 	newItem->next = (*table)[get_hash(key)];
