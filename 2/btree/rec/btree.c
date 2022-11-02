@@ -221,15 +221,9 @@ void bst_dispose(bst_node_t **tree) {
 		return;
 	}
 
-	// Rekurzívne zrušenie ľavého podstromu
-	if ((*tree)->left != NULL) {
-		bst_dispose(&(*tree)->left);
-	}
-
-	// Rekurzívne zrušenie pravého podstromu
-	if ((*tree)->right != NULL) {
-		bst_dispose(&(*tree)->right);
-	}
+	// Rekurzívne zrušenie podstromov
+	bst_dispose(&(*tree)->left);
+	bst_dispose(&(*tree)->right);
 
 	// Uvoľnenie pamäte aktuálneho uzla
 	free(*tree);
