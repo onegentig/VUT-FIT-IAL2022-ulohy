@@ -33,11 +33,11 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
 - [ ] recursive binary search tree
   - [X] function bst_init()
     - [X] test#01 test_tree_init
-  - [ ] function bst_search()
+  - [X] function bst_search()
     - [X] test#03 test_tree_search_empty
     - [X] test#05 test_tree_search_root
-    - [ ] test#08 test_tree_search
-    - [ ] test#09 test_tree_search_missing
+    - [X] test#08 test_tree_search
+    - [X] test#09 test_tree_search_missing
   - [X] function bst_insert()
     - [X] test#04 test_tree_insert_root
     - [X] test#06 test_tree_update_root

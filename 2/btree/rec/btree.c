@@ -37,13 +37,26 @@ bool bst_search(bst_node_t *tree, char key, int *value) {
 		return false;
 	}
 
+	// Aktuálny kľúč
+	char currentKey = tree->key;
+
 	// Uzol nájdený
-	if (tree->key == key) {
+	if (currentKey == key) {
 		*value = tree->value;
 		return true;
 	}
 
-	// TODO: Rekurzívne vyhľadávanie
+	// Rekurzívne vyhľadávanie v ľavom podstrome
+	if (currentKey > key) {
+		return bst_search(tree->left, key, value);
+	}
+
+	// Rekurzívne vyhľadávanie v pravom podstrome
+	if (currentKey < key) {
+		return bst_search(tree->right, key, value);
+	}
+
+	// Uzol nebol nájdený
 	return false;
 }
 
