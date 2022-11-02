@@ -74,13 +74,24 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		return;
 	}
 
+	// Aktuálny kľúč
+	char currentKey = (*tree)->key;
+
 	// Zhodný kľúč - nahradenie hodnoty
-	if ((*tree)->key == key) {
+	if (currentKey == key) {
 		(*tree)->value = value;
 		return;
 	}
 
-	// TODO: Rekurzívne vloženie
+	// Rekurzívne vloženie do ľavého podstromu
+	if (key < currentKey) {
+		return bst_insert(&(*tree)->left, key, value);
+	}
+
+	// Rekurzívne vloženie do pravého podstromu
+	if (key > currentKey) {
+		return bst_insert(&(*tree)->right, key, value);
+	}
 }
 
 /*

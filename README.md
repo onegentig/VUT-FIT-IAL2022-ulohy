@@ -38,10 +38,10 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#05 test_tree_search_root
     - [ ] test#08 test_tree_search
     - [ ] test#09 test_tree_search_missing
-  - [ ] function bst_insert()
+  - [X] function bst_insert()
     - [X] test#04 test_tree_insert_root
-    - [ ] test#06 test_tree_update_root
-    - [ ] test#07 test_tree_insert_many
+    - [X] test#06 test_tree_update_root
+    - [X] test#07 test_tree_insert_many
   - [ ] function bst_replace_by_rightmost()
   - [ ] function bst_delete()
     - [ ] test#10 test_tree_delete_leaf
