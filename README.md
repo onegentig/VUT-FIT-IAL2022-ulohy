@@ -13,7 +13,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
 ## Úloha 2
 
 - [X] ⏰ Zadanie 24.10.
-- [ ] hashtable
+- [X] hashtable
   - [X] function ht_init()
     - [X] test#01 test_table_init
   - [X] function ht_search()
