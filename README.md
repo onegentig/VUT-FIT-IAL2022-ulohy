@@ -31,25 +31,63 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
   - [X] function ht_delete_all()
     - [X] test#10 test_delete_all
 - [ ] recursive binary search tree
-  - [ ] function bst_init()
+  - [X] function bst_init()
+    - [X] test#01 test_tree_init
   - [ ] function bst_search()
+    - [ ] test#03 test_tree_search_empty
+    - [ ] test#05 test_tree_search_root
+    - [ ] test#08 test_tree_search
+    - [ ] test#09 test_tree_search_missing
   - [ ] function bst_insert()
+    - [ ] test#04 test_tree_insert_root
+    - [ ] test#06 test_tree_update_root
+    - [ ] test#07 test_tree_insert_many
   - [ ] function bst_replace_by_rightmost()
   - [ ] function bst_delete()
+    - [ ] test#10 test_tree_delete_leaf
+    - [ ] test#11 test_tree_delete_left_subtree
+    - [ ] test#12 test_tree_delete_right_subtree
+    - [ ] test#13 test_tree_delete_both_subtrees
+    - [ ] test#14 test_tree_delete_missing
+    - [ ] test#15 test_tree_delete_root
   - [ ] function bst_dispose()
+    - [ ] test#02 test_tree_dispose_empty
+    - [ ] test#16 test_tree_dispose_filled
   - [ ] function bst_preorder()
+    - [ ] test#17 test_tree_preorder
   - [ ] function bst_inorder()
+    - [ ] test#18 test_tree_inorder
   - [ ] function bst_postorder()
+    - [ ] test#19 test_tree_postorder
 - [ ] iterative binary search tree
   - [ ] function bst_init()
+    - [ ] test#01 test_tree_init
   - [ ] function bst_search()
+    - [ ] test#03 test_tree_search_empty
+    - [ ] test#05 test_tree_search_root
+    - [ ] test#08 test_tree_search
+    - [ ] test#09 test_tree_search_missing
   - [ ] function bst_insert()
+    - [ ] test#04 test_tree_insert_root
+    - [ ] test#06 test_tree_update_root
+    - [ ] test#07 test_tree_insert_many
   - [ ] function bst_replace_by_rightmost()
   - [ ] function bst_delete()
+    - [ ] test#10 test_tree_delete_leaf
+    - [ ] test#11 test_tree_delete_left_subtree
+    - [ ] test#12 test_tree_delete_right_subtree
+    - [ ] test#13 test_tree_delete_both_subtrees
+    - [ ] test#14 test_tree_delete_missing
+    - [ ] test#15 test_tree_delete_root
   - [ ] function bst_dispose()
+    - [ ] test#02 test_tree_dispose_empty
+    - [ ] test#16 test_tree_dispose_filled
   - [ ] function bst_preorder()
+    - [ ] test#17 test_tree_preorder
   - [ ] function bst_inorder()
+    - [ ] test#18 test_tree_inorder
   - [ ] function bst_postorder()
+    - [ ] test#19 test_tree_postorder
 - [ ] ⏰ Deadline 13.11
 
 Hodnotenie: ? / ? <br>（?）
