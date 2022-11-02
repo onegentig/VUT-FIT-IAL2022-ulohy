@@ -99,12 +99,14 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 
 	// Rekurzívne vloženie do ľavého podstromu
 	if (key < currentKey) {
-		return bst_insert(&(*tree)->left, key, value);
+		bst_insert(&(*tree)->left, key, value);
+		return;
 	}
 
 	// Rekurzívne vloženie do pravého podstromu
 	if (key > currentKey) {
-		return bst_insert(&(*tree)->right, key, value);
+		bst_insert(&(*tree)->right, key, value);
+		return;
 	}
 }
 
@@ -143,7 +145,7 @@ void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
 	}
 
 	// Rekurzívne hľadanie najpravejšieho potomka
-	return bst_replace_by_rightmost(target, &(*tree)->right);
+	bst_replace_by_rightmost(target, &(*tree)->right);
 }
 
 /*
@@ -189,18 +191,21 @@ void bst_delete(bst_node_t **tree, char key) {
 
 		// Uzol má podstromy na oboch stranách
 		if (hasLeftSubtree && hasRightSubtree) {
-			return bst_replace_by_rightmost(*tree, &(*tree)->left);
+			bst_replace_by_rightmost(*tree, &(*tree)->left);
+			return;
 		}
 	}
 
 	// Rekurzívne odstránenie z ľavého podstromu
 	if (key < currentKey && hasLeftSubtree) {
-		return bst_delete(&(*tree)->left, key);
+		bst_delete(&(*tree)->left, key);
+		return;
 	}
 
 	// Rekurzívne odstránenie z pravého podstromu
 	if (key > currentKey && hasRightSubtree) {
-		return bst_delete(&(*tree)->right, key);
+		bst_delete(&(*tree)->right, key);
+		return;
 	}
 }
 
