@@ -50,6 +50,27 @@ bool bst_search(bst_node_t *tree, char key, int *value) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_insert(bst_node_t **tree, char key, int value) {
+	// Vložiť uzol ako koreň stromu
+	if (*tree == NULL) {
+		bst_node_t *newNode = (bst_node_t *)malloc(sizeof(bst_node_t));
+		if (newNode == NULL) {
+			return; // Chyba alokácie pamäte
+		}
+
+		// Vloženie nového uzla
+		newNode->key = key;
+		newNode->value = value;
+		newNode->left = NULL;
+		newNode->right = NULL;
+		*tree = newNode;
+		return;
+	}
+
+	// Zhodný kľúč - nahradenie hodnoty
+	if ((*tree)->key == key) {
+		(*tree)->value = value;
+		return;
+	}
 }
 
 /*
