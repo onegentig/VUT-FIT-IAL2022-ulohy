@@ -76,7 +76,7 @@ void ht_insert(ht_table_t *table, char *key, float value) {
 	}
 
 	// Vytvorenie nového prvku
-	ht_item_t *newItem = malloc(sizeof(ht_item_t));
+	ht_item_t *newItem = (ht_item_t*)malloc(sizeof(ht_item_t));
 	if (newItem == NULL) {
 		return;
 	}

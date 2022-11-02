@@ -11,7 +11,6 @@ test: $(FILES)
 	@./test > current-test.output
 	@echo "Test output differences:"
 	@tr -d '\r' <../btree-test.output | diff -su - current-test.output | cat
-	@valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file="valgrind.output" test
 
 clean:
 	rm -f test
