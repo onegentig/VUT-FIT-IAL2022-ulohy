@@ -122,6 +122,28 @@ void bst_insert(bst_node_t **tree, char key, int value) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
+	// Prázdny strom (pre istotu)
+	if (*tree == NULL) {
+		return;
+	}
+
+	// Nájdený najpravejší potomok
+	if ((*tree)->right == NULL) {
+		// Nahradenie kľúča a hodnoty `target` podľa nájdeného uzla
+		target->key = (*tree)->key;
+		target->value = (*tree)->value;
+
+		// Nastavenie ukazovateľa na podstrom na ľavo od nájdeného uzla
+		bst_node_t *temp = *tree;
+		*tree = (*tree)->left;
+
+		// Uvoľnenie pamäte najpravejšieho potomka
+		free(temp);
+		return;
+	}
+
+	// Rekurzívne hľadanie najpravejšieho potomka
+	return bst_replace_by_rightmost(target, &(*tree)->right);
 }
 
 /*
