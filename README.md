@@ -30,7 +30,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#09 test_delete
   - [X] function ht_delete_all()
     - [X] test#10 test_delete_all
-- [ ] recursive binary search tree
+- [X] recursive binary search tree
   - [X] function bst_init()
     - [X] test#01 test_tree_init
   - [X] function bst_search()
