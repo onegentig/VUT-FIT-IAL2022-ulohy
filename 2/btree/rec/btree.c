@@ -31,6 +31,10 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
+	if (tree == NULL) {
+		return false;
+	}
+
 	return false;
 }
 
@@ -89,6 +93,9 @@ void bst_delete(bst_node_t **tree, char key) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 void bst_dispose(bst_node_t **tree) {
+	if (*tree == NULL) {
+		return;
+	}
 }
 
 /*
