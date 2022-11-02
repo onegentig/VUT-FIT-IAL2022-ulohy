@@ -35,7 +35,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#01 test_tree_init
   - [ ] function bst_search()
     - [X] test#03 test_tree_search_empty
-    - [ ] test#05 test_tree_search_root
+    - [X] test#05 test_tree_search_root
     - [ ] test#08 test_tree_search
     - [ ] test#09 test_tree_search_missing
   - [ ] function bst_insert()

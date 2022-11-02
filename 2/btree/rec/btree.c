@@ -31,10 +31,18 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
+	// Koreň stromu je prázdny
 	if (tree == NULL) {
 		return false;
 	}
 
+	// Uzol nájdený
+	if (tree->key == key) {
+		*value = tree->value;
+		return true;
+	}
+
+	// TODO: Rekurzívne vyhľadávanie
 	return false;
 }
 
@@ -71,6 +79,8 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		(*tree)->value = value;
 		return;
 	}
+
+	// TODO: Rekurzívne vloženie
 }
 
 /*
