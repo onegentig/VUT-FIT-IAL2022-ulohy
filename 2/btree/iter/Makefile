@@ -5,7 +5,12 @@ FILES=btree.c ../btree.c stack.c ../test_util.c ../test.c
 .PHONY: test clean
 
 test: $(FILES)
-	$(CC) $(CFLAGS) -o $@ $(FILES)
+	@echo "======== iter/btree ========"
+	@rm -f current-test.output
+	@$(CC) $(CFLAGS) -o $@ $(FILES)
+	@./test > current-test.output
+	@echo "Test output differences:"
+	@tr -d '\r' <../btree-test.output | diff -su - current-test.output | cat
 
 clean:
 	rm -f test
