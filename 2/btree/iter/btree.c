@@ -71,8 +71,7 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 	// Nastavenie hodnôt uzla
 	newNode->key = key;
 	newNode->value = value;
-	newNode->left = NULL;
-	newNode->right = NULL;
+	newNode->left = newNode->right = NULL;
 
 	// Strom je prázdny - vložiť uzol ako koreň stromu
 	if (*tree == NULL) {
@@ -80,8 +79,8 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		return;
 	}
 
-	bool done = false;
 	bst_node_t *currentNode = *tree;
+	bool done = false;
 
 	// Iteratívne vloženie do podstromu
 	while (!done) {
@@ -91,39 +90,35 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		bool hasRightSubtree = currentNode->right != NULL;
 
 		// Zhodný kľúč
-		if (currentKey == key) {
+		if (key == currentKey) {
 			// Nahradenie hodnoty
 			currentNode->value = value;
 			free(newNode); // Nie je potrebný nový uzol
-
 			done = true;
-			break;
 		}
 
 		// Vloženie do ľavého podstromu
 		if (key < currentKey) {
-			// Nájdený najľavejší uzol
-			if (!hasLeftSubtree) {
+			if (hasLeftSubtree) {
+				// Pokračovanie v prechádzaní ľavého podstromu
+				currentNode = currentNode->left;
+			} else {
+				// Nájdený najľavejší uzol - vloženie
 				currentNode->left = newNode;
 				done = true;
-				break;
 			}
-
-			// Ďalší uzol v ľavom podstrome
-			currentNode = currentNode->left;
 		}
 
 		// Vloženie do pravého podstromu
 		if (key > currentKey) {
-			// Nájdený najpravejší uzol
-			if (!hasRightSubtree) {
+			if (hasRightSubtree) {
+				// Pokračovanie v prechádzaní pravého podstromu
+				currentNode = currentNode->right;
+			} else {
+				// Nájdený najpravejší uzol - vloženie
 				currentNode->right = newNode;
 				done = true;
-				break;
 			}
-
-			// Ďalší uzol v pravom podstrome
-			currentNode = currentNode->right;
 		}
 	}
 }
