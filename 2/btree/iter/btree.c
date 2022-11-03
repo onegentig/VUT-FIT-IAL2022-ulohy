@@ -1,9 +1,9 @@
-/*
- * Binárny vyhľadávací strom — iteratívna varianta
+/**
+ * @file iter/btree.c
+ * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @brief Binárny vyhľadávací strom — iteratívna varianta
+ * @date 2022-xx-xx
  *
- * S využitím dátových typov zo súboru btree.h, zásobníkov zo súborov stack.h a
- * stack.c a pripravených kostier funkcií implementujte binárny vyhľadávací
- * strom bez použitia rekurzie.
  */
 
 #include "../btree.h"
@@ -20,6 +20,7 @@
  * možné toto detegovať vo funkcii.
  */
 void bst_init(bst_node_t **tree) {
+	*tree = NULL;
 }
 
 /*
@@ -32,6 +33,20 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
+	// Strom je prázdny
+	if (tree == NULL) {
+		return false;
+	}
+
+	char currentKey = tree->key;
+
+	// Uzol nájdený
+	if (currentKey == key) {
+		*value = tree->value;
+		return true;
+	}
+
+	// TODO
 	return false;
 }
 
@@ -47,6 +62,32 @@ bool bst_search(bst_node_t *tree, char key, int *value) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 void bst_insert(bst_node_t **tree, char key, int value) {
+	// Vložiť uzol ako koreň stromu
+	if (*tree == NULL) {
+		bst_node_t *newNode = (bst_node_t *)malloc(sizeof(bst_node_t));
+		if (newNode == NULL) {
+			return; // Chyba alokácie pamäte
+		}
+
+		// Vloženie nového uzla
+		newNode->key = key;
+		newNode->value = value;
+		newNode->left = NULL;
+		newNode->right = NULL;
+		*tree = newNode;
+		return;
+	}
+
+	char currentKey = (*tree)->key;
+
+	// Zhodný kľúč - nahradenie hodnoty
+	if (currentKey == key) {
+		(*tree)->value = value;
+		return;
+	}
+
+	// TODO
+	return;
 }
 
 /*
@@ -63,6 +104,28 @@ void bst_insert(bst_node_t **tree, char key, int value) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
+	// Kontrola, či je strom neprázdny (pre istotu)
+	if (*tree == NULL) {
+		return;
+	}
+
+	// Nájdený najpravejší potomok
+	if ((*tree)->right == NULL) {
+		// Nahradenie kľúča a hodnoty `target` podľa nájdeného uzla
+		target->key = (*tree)->key;
+		target->value = (*tree)->value;
+
+		// Nastavenie ukazovateľa na podstrom na ľavo od nájdeného uzla
+		bst_node_t *temp = *tree;
+		*tree = (*tree)->left;
+
+		// Uvoľnenie pamäte najpravejšieho potomka
+		free(temp);
+		return;
+	}
+
+	// TODO
+	return;
 }
 
 /*
@@ -78,6 +141,40 @@ void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
  * použitia vlastných pomocných funkcií.
  */
 void bst_delete(bst_node_t **tree, char key) {
+	// Koreň stromu je prázdny
+	if (*tree == NULL) {
+		return;
+	}
+
+	char currentKey = (*tree)->key;
+	bool hasLeftSubtree = (*tree)->left != NULL;
+	bool hasRightSubtree = (*tree)->right != NULL;
+
+	// Zhodný kľúč - odstránenie uzla
+	if (currentKey == key) {
+		// Uzol nemá potomkov - list
+		if (!hasLeftSubtree && !hasRightSubtree) {
+			free(*tree);
+			*tree = NULL;
+			return;
+		}
+
+		// Uzol má jeden podstrom
+		if (hasLeftSubtree ^ hasRightSubtree) {
+			bst_node_t *temp = *tree;
+			*tree = hasLeftSubtree ? (*tree)->left : (*tree)->right;
+			free(temp);
+			return;
+		}
+
+		// Uzol má podstromy na oboch stranách
+		if (hasLeftSubtree && hasRightSubtree) {
+			bst_replace_by_rightmost(*tree, &(*tree)->left);
+			return;
+		}
+	}
+
+	// TODO
 }
 
 /*
@@ -91,6 +188,16 @@ void bst_delete(bst_node_t **tree, char key) {
  * vlastných pomocných funkcií.
  */
 void bst_dispose(bst_node_t **tree) {
+	// Prázdny strom - nie je čo rušiť
+	if (*tree == NULL) {
+		return;
+	}
+
+	// TODO
+
+	// Uvoľnenie pamäte aktuálneho uzla
+	free(*tree);
+	*tree = NULL;
 }
 
 /*
@@ -103,6 +210,7 @@ void bst_dispose(bst_node_t **tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_preorder(bst_node_t *tree, stack_bst_t *to_visit) {
+	// TODO
 }
 
 /*
@@ -114,6 +222,12 @@ void bst_leftmost_preorder(bst_node_t *tree, stack_bst_t *to_visit) {
  * zásobníku uzlov bez použitia vlastných pomocných funkcií.
  */
 void bst_preorder(bst_node_t *tree) {
+	// Prázdny strom - nie je čo prechádzať
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
 
 /*
@@ -126,6 +240,7 @@ void bst_preorder(bst_node_t *tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_inorder(bst_node_t *tree, stack_bst_t *to_visit) {
+	// TODO
 }
 
 /*
@@ -137,6 +252,12 @@ void bst_leftmost_inorder(bst_node_t *tree, stack_bst_t *to_visit) {
  * zásobníku uzlov bez použitia vlastných pomocných funkcií.
  */
 void bst_inorder(bst_node_t *tree) {
+	// Prázdny strom - nie je čo prechádzať
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
 
 /*
@@ -150,6 +271,7 @@ void bst_inorder(bst_node_t *tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_postorder(bst_node_t *tree, stack_bst_t *to_visit, stack_bool_t *first_visit) {
+	// TODO
 }
 
 /*
@@ -161,4 +283,10 @@ void bst_leftmost_postorder(bst_node_t *tree, stack_bst_t *to_visit, stack_bool_
  * zásobníkov uzlov a bool hodnôt bez použitia vlastných pomocných funkcií.
  */
 void bst_postorder(bst_node_t *tree) {
+	// Prázdny strom - nie je čo prechádzať
+	if (tree == NULL) {
+		return;
+	}
+
+	// TODO
 }
