@@ -62,32 +62,70 @@ bool bst_search(bst_node_t *tree, char key, int *value) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 void bst_insert(bst_node_t **tree, char key, int value) {
-	// Vložiť uzol ako koreň stromu
-	if (*tree == NULL) {
-		bst_node_t *newNode = (bst_node_t *)malloc(sizeof(bst_node_t));
-		if (newNode == NULL) {
-			return; // Chyba alokácie pamäte
-		}
+	// Alokovanie nového uzla
+	bst_node_t *newNode = (bst_node_t *)malloc(sizeof(bst_node_t));
+	if (newNode == NULL) {
+		return; // Chyba alokácie pamäte
+	}
 
-		// Vloženie nového uzla
-		newNode->key = key;
-		newNode->value = value;
-		newNode->left = NULL;
-		newNode->right = NULL;
+	// Nastavenie hodnôt uzla
+	newNode->key = key;
+	newNode->value = value;
+	newNode->left = NULL;
+	newNode->right = NULL;
+
+	// Strom je prázdny - vložiť uzol ako koreň stromu
+	if (*tree == NULL) {
 		*tree = newNode;
 		return;
 	}
 
-	char currentKey = (*tree)->key;
+	bool done = false;
+	bst_node_t *currentNode = *tree;
 
-	// Zhodný kľúč - nahradenie hodnoty
-	if (currentKey == key) {
-		(*tree)->value = value;
-		return;
+	// Iteratívne vloženie do podstromu
+	while (!done) {
+		// Pomocné premenné
+		char currentKey = currentNode->key;
+		bool hasLeftSubtree = currentNode->left != NULL;
+		bool hasRightSubtree = currentNode->right != NULL;
+
+		// Zhodný kľúč
+		if (currentKey == key) {
+			// Nahradenie hodnoty
+			currentNode->value = value;
+			free(newNode); // Nie je potrebný nový uzol
+
+			done = true;
+			break;
+		}
+
+		// Vloženie do ľavého podstromu
+		if (key < currentKey) {
+			// Nájdený najľavejší uzol
+			if (!hasLeftSubtree) {
+				currentNode->left = newNode;
+				done = true;
+				break;
+			}
+
+			// Ďalší uzol v ľavom podstrome
+			currentNode = currentNode->left;
+		}
+
+		// Vloženie do pravého podstromu
+		if (key > currentKey) {
+			// Nájdený najpravejší uzol
+			if (!hasRightSubtree) {
+				currentNode->right = newNode;
+				done = true;
+				break;
+			}
+
+			// Ďalší uzol v pravom podstrome
+			currentNode = currentNode->right;
+		}
 	}
-
-	// TODO
-	return;
 }
 
 /*
