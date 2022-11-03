@@ -86,7 +86,6 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		return;
 	}
 
-	// Aktuálny kľúč
 	char currentKey = (*tree)->key;
 
 	// Zhodný kľúč - nahradenie hodnoty
