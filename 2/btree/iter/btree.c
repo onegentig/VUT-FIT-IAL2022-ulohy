@@ -386,6 +386,8 @@ void bst_preorder(bst_node_t *tree) {
 			bst_leftmost_preorder(currentNode->right, stack);
 		}
 	}
+
+	free(stack);
 }
 
 /*
@@ -444,6 +446,8 @@ void bst_inorder(bst_node_t *tree) {
 			bst_leftmost_inorder(currentNode->right, stack);
 		}
 	}
+
+	free(stack);
 }
 
 /*
