@@ -457,7 +457,16 @@ void bst_inorder(bst_node_t *tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_postorder(bst_node_t *tree, stack_bst_t *to_visit, stack_bool_t *first_visit) {
-	// TODO
+	bst_node_t *currentNode = tree;
+
+	while (currentNode != NULL) {
+		// Pridanie uzla do zásobníka
+		stack_bst_push(to_visit, currentNode);
+		stack_bool_push(first_visit, true);
+
+		// Prechod do ľavého podstromu
+		currentNode = currentNode->left;
+	}
 }
 
 /*
@@ -474,5 +483,44 @@ void bst_postorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Postorder tree walk: ľavý podstrom -> pravý podstrom -> koreň
+	// Inicializácia zásobníkov
+	stack_bst_t *stack = (stack_bst_t *)malloc(sizeof(stack_bst_t));
+	if (stack == NULL) {
+		return; // Chyba alokácie pamäte
+	}
+	stack_bst_init(stack);
+
+	stack_bool_t *bStack = (stack_bool_t *)malloc(sizeof(stack_bool_t));
+	if (bStack == NULL) {
+		return; // Chyba alokácie pamäte
+	}
+	stack_bool_init(bStack);
+
+	// Prechod k najľavejšiemu uzlu
+	bst_node_t *currentNode = tree;
+	bst_leftmost_postorder(currentNode, stack, bStack);
+
+	while (!stack_bst_empty(stack)) {
+		currentNode = stack_bst_pop(stack);
+		bool firstVisit = stack_bool_pop(bStack);
+
+		if (firstVisit) {
+			// Uzol bol navštívený prvý krát - uloženie do zásobníka
+			stack_bst_push(stack, currentNode);
+			stack_bool_push(bStack, false);
+
+			// Prechod do pravého podstromu
+			if (currentNode->right != NULL) {
+				bst_leftmost_postorder(currentNode->right, stack, bStack);
+			}
+		} else {
+			// Uzol už bol navštívený - výpis
+			bst_print_node(currentNode);
+		}
+	}
+
+	// Uvoľnenie pamäte zásobníkov
+	free(stack);
+	free(bStack);
 }

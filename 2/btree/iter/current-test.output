@@ -658,7 +658,7 @@ Binary tree structure:
 
 
 [test_tree_postorder] Traverse the tree using postorder
-
+[A,3][C,4][B,2][E,5][D,1]
 Binary tree structure:
 
      +-[E,5]
