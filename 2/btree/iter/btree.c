@@ -213,7 +213,7 @@ void bst_delete(bst_node_t **tree, char key) {
 
 	// Iteratívne nájdenie a odstránenie uzla
 	while (!done) {
-		// Prechod na neexistujúci uzol
+		// Prechod na neexistujúci uzol => uzol neexistuje
 		if (currentNode == NULL) {
 			return;
 		}
@@ -224,11 +224,13 @@ void bst_delete(bst_node_t **tree, char key) {
 
 		// Zhodný kľúč - uzol nájdený
 		if (key == currentKey) {
-			bool isLeftChild = parentNode != NULL && parentNode->left == currentNode;
-			bool isRightChild = parentNode != NULL && parentNode->right == currentNode;
+			bool isLeftChild = parentNode != NULL && parentNode->left->key == currentNode->key;
+			bool isRightChild = parentNode != NULL && parentNode->right->key == currentNode->key;
 
 			// Uzol nemá potomkov - list
 			if (!hasLeftSubtree && !hasRightSubtree) {
+				free(currentNode);
+
 				// Odstránenie ukazateľa z rodičovského uzla
 				if (isLeftChild) {
 					parentNode->left = NULL;
@@ -237,14 +239,12 @@ void bst_delete(bst_node_t **tree, char key) {
 				} else {
 					*tree = NULL; // Žiadny rodič - odstránenie koreňa
 				}
-
-				// Uvoľnenie pamäte odstráneného uzla
-				free(currentNode);
 			}
 
 			// Uzol má jeden podstrom
 			if (hasLeftSubtree ^ hasRightSubtree) {
 				bst_node_t *replacementNode = hasLeftSubtree ? currentNode->left : currentNode->right;
+				free(currentNode);
 
 				// Odstránenie ukazateľa z rodičovského uzla
 				if (isLeftChild) {
@@ -254,9 +254,6 @@ void bst_delete(bst_node_t **tree, char key) {
 				} else {
 					*tree = replacementNode; // Žiadny rodič - koreň
 				}
-
-				// Uvoľnenie pamäte odstráneného uzla
-				free(currentNode);
 			}
 
 			// Uzol má oba podstromy
@@ -264,7 +261,6 @@ void bst_delete(bst_node_t **tree, char key) {
 				// Nahradenie uzla najpravejším uzlom ľavého podstromu
 				bst_replace_by_rightmost(currentNode, &(currentNode->left));
 			}
-
 			done = true;
 		}
 
