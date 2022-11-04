@@ -32,14 +32,14 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte rekurzívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
-	// Strom je prázdny
+	// Strom je prázdny - nie je kde hľadať
 	if (tree == NULL) {
 		return false;
 	}
 
 	char currentKey = tree->key;
 
-	// Uzol nájdený
+	// Zhodný kľúč - uzol nájdený
 	if (currentKey == key) {
 		*value = tree->value;
 		return true;
@@ -83,7 +83,7 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 		newNode->value = value;
 		newNode->left = newNode->right = NULL;
 
-		// Vloženie uzla do stromu
+		// vloženie uzla ako koreň
 		*tree = newNode;
 		return;
 	}
@@ -98,8 +98,10 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 
 	// Rekurzívne vloženie do podstromu
 	if (key < currentKey) {
+		// Ľavý podstrom
 		bst_insert(&(*tree)->left, key, value);
 	} else if (key > currentKey) {
+		// Pravý podstrom
 		bst_insert(&(*tree)->right, key, value);
 	}
 }
@@ -167,7 +169,7 @@ void bst_delete(bst_node_t **tree, char key) {
 	// Zhodný kľúč - odstránenie uzla
 	if (currentKey == key) {
 
-		// Uzol nemá potomkov - list
+		// Uzol nemá potomkov
 		if (!hasLeftSubtree && !hasRightSubtree) {
 			free(*tree);
 			*tree = NULL;

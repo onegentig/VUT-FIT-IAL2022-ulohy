@@ -89,7 +89,7 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 	newNode->value = value;
 	newNode->left = newNode->right = NULL;
 
-	// Strom je prázdny - vložiť uzol ako koreň stromu
+	// Strom je prázdny - vloženie uzla ako koreň
 	if (*tree == NULL) {
 		*tree = newNode;
 		return;
@@ -222,12 +222,12 @@ void bst_delete(bst_node_t **tree, char key) {
 		bool hasLeftSubtree = currentNode->left != NULL;
 		bool hasRightSubtree = currentNode->right != NULL;
 
-		// Zhodný kľúč - uzol nájdený
+		// Zhodný kľúč - odstránenie uzla
 		if (key == currentKey) {
 			bool isLeftChild = parentNode != NULL && parentNode->left->key == currentNode->key;
 			bool isRightChild = parentNode != NULL && parentNode->right->key == currentNode->key;
 
-			// Uzol nemá potomkov - list
+			// Uzol nemá potomkov
 			if (!hasLeftSubtree && !hasRightSubtree) {
 				free(currentNode);
 
@@ -256,9 +256,8 @@ void bst_delete(bst_node_t **tree, char key) {
 				}
 			}
 
-			// Uzol má oba podstromy
+			// Uzol má podstromy na oboch stranách
 			if (hasLeftSubtree && hasRightSubtree) {
-				// Nahradenie uzla najpravejším uzlom ľavého podstromu
 				bst_replace_by_rightmost(currentNode, &(currentNode->left));
 			}
 			done = true;
