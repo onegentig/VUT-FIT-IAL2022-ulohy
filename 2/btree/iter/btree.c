@@ -294,11 +294,40 @@ void bst_dispose(bst_node_t **tree) {
 		return;
 	}
 
-	// TODO
+	// Inicializácia zásobníku
+	stack_bst_t *stack = (stack_bst_t *)malloc(sizeof(stack_bst_t));
+	if (stack == NULL) {
+		return; // Chyba alokácie pamäte
+	}
 
-	// Uvoľnenie pamäte aktuálneho uzla
-	free(*tree);
+	stack_bst_init(stack);
+
+	// Pridanie koreňa stromu do zásobníka
+	stack_bst_push(stack, *tree);
+
+	// Iteratívne pridávanie uzlov do zásobníka a uvoľňovanie ich pamäte
+	while (!stack_bst_empty(stack)) {
+		bst_node_t *currentNode = stack_bst_pop(stack);
+		if (currentNode == NULL) {
+			continue;
+		}
+
+		// Pridanie ľavého potomka do zásobníka
+		if (currentNode->left != NULL) {
+			stack_bst_push(stack, currentNode->left);
+		}
+
+		// Pridanie pravého potomka do zásobníka
+		if (currentNode->right != NULL) {
+			stack_bst_push(stack, currentNode->right);
+		}
+
+		// Uvoľnenie pamäte
+		free(currentNode);
+	}
+
 	*tree = NULL;
+	free(stack);
 }
 
 /*
