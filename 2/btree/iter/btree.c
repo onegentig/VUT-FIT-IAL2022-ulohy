@@ -157,23 +157,36 @@ void bst_replace_by_rightmost(bst_node_t *target, bst_node_t **tree) {
 		return;
 	}
 
-	// Nájdený najpravejší potomok
-	if ((*tree)->right == NULL) {
-		// Nahradenie kľúča a hodnoty `target` podľa nájdeného uzla
-		target->key = (*tree)->key;
-		target->value = (*tree)->value;
+	bst_node_t *currentNode = *tree;
+	bst_node_t *parentNode = NULL;
+	bool done = false;
 
-		// Nastavenie ukazovateľa na podstrom na ľavo od nájdeného uzla
-		bst_node_t *temp = *tree;
-		*tree = (*tree)->left;
+	// Iteratívne hľadanie najpravejšieho uzla
+	while (!done) {
+		// Nájdený najpravejší potomok
+		if (currentNode->right == NULL) {
+			// Nahradenie kľúča a hodnoty `target` podľa nájdeného uzla
+			target->key = currentNode->key;
+			target->value = currentNode->value;
 
-		// Uvoľnenie pamäte najpravejšieho potomka
-		free(temp);
-		return;
+			// Odstránenie uzla
+			if (parentNode == NULL) {
+				// Odstránenie koreňa stromu
+				*tree = currentNode->left;
+			} else {
+				// Odstránenie uzla z ľavého podstromu
+				parentNode->right = currentNode->left;
+			}
+
+			// Uvoľnenie pamäte najpravejšieho potomka
+			free(currentNode);
+			done = true;
+		} else {
+			// Prechod do pravého podstromu
+			parentNode = currentNode;
+			currentNode = currentNode->right;
+		}
 	}
-
-	// TODO
-	return;
 }
 
 /*
