@@ -342,7 +342,6 @@ void bst_leftmost_preorder(bst_node_t *tree, stack_bst_t *to_visit) {
 	bst_node_t *currentNode = tree;
 
 	while (currentNode != NULL) {
-		// Výpis uzla
 		bst_print_node(currentNode);
 
 		// Pridanie uzla do zásobníka
@@ -399,7 +398,15 @@ void bst_preorder(bst_node_t *tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_inorder(bst_node_t *tree, stack_bst_t *to_visit) {
-	// TODO
+	bst_node_t *currentNode = tree;
+
+	while (currentNode != NULL) {
+		// Pridanie uzla do zásobníka
+		stack_bst_push(to_visit, currentNode);
+
+		// Prechod do ľavého podstromu
+		currentNode = currentNode->left;
+	}
 }
 
 /*
@@ -416,7 +423,27 @@ void bst_inorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Inorder tree walk: ľavý podstrom -> koreň -> pravý podstrom
+	// Inicializácia zásobníku
+	stack_bst_t *stack = (stack_bst_t *)malloc(sizeof(stack_bst_t));
+	if (stack == NULL) {
+		return; // Chyba alokácie pamäte
+	}
+	stack_bst_init(stack);
+
+	// Prechod k najľavejšiemu uzlu
+	bst_node_t *currentNode = tree;
+	bst_leftmost_inorder(currentNode, stack);
+
+	while (!stack_bst_empty(stack)) {
+		currentNode = stack_bst_pop(stack);
+		bst_print_node(currentNode);
+
+		// Prechod do pravého podstromu
+		if (currentNode->right != NULL) {
+			bst_leftmost_inorder(currentNode->right, stack);
+		}
+	}
 }
 
 /*

@@ -643,7 +643,7 @@ Binary tree structure:
 
 
 [test_tree_inorder] Traverse the tree using inorder
-
+[A,3][B,2][C,4][D,1][E,5]
 Binary tree structure:
 
      +-[E,5]
