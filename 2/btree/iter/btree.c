@@ -213,7 +213,7 @@ void bst_delete(bst_node_t **tree, char key) {
 
 	// Iteratívne nájdenie a odstránenie uzla
 	while (!done) {
-		// Prechod na neexistujúci uzol => uzol neexistuje
+		// Bol prevedený prechod na neexistujúci uzol
 		if (currentNode == NULL) {
 			return;
 		}
@@ -299,7 +299,6 @@ void bst_dispose(bst_node_t **tree) {
 	if (stack == NULL) {
 		return; // Chyba alokácie pamäte
 	}
-
 	stack_bst_init(stack);
 
 	// Pridanie koreňa stromu do zásobníka
@@ -340,7 +339,18 @@ void bst_dispose(bst_node_t **tree) {
  * vlastných pomocných funkcií.
  */
 void bst_leftmost_preorder(bst_node_t *tree, stack_bst_t *to_visit) {
-	// TODO
+	bst_node_t *currentNode = tree;
+
+	while (currentNode != NULL) {
+		// Výpis uzla
+		bst_print_node(currentNode);
+
+		// Pridanie uzla do zásobníka
+		stack_bst_push(to_visit, currentNode);
+
+		// Prechod do ľavého podstromu
+		currentNode = currentNode->left;
+	}
 }
 
 /*
@@ -357,7 +367,26 @@ void bst_preorder(bst_node_t *tree) {
 		return;
 	}
 
-	// TODO
+	// Preorder tree walk: koreň -> ľavý podstrom -> pravý podstrom
+	// Inicializácia zásobníku
+	stack_bst_t *stack = (stack_bst_t *)malloc(sizeof(stack_bst_t));
+	if (stack == NULL) {
+		return; // Chyba alokácie pamäte
+	}
+	stack_bst_init(stack);
+
+	// Prechod k najľavejšiemu uzlu
+	bst_node_t *currentNode = tree;
+	bst_leftmost_preorder(currentNode, stack);
+
+	while (!stack_bst_empty(stack)) {
+		currentNode = stack_bst_pop(stack);
+
+		// Prechod do pravého podstromu
+		if (currentNode->right != NULL) {
+			bst_leftmost_preorder(currentNode->right, stack);
+		}
+	}
 }
 
 /*
