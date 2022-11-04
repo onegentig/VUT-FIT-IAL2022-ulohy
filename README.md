@@ -59,7 +59,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#18 test_tree_inorder
   - [X] function bst_postorder()
     - [X] test#19 test_tree_postorder
-- [ ] iterative binary search tree
+- [X] iterative binary search tree
   - [X] function bst_init()
     - [X] test#01 test_tree_init
   - [X] function bst_search()
