@@ -207,35 +207,93 @@ void bst_delete(bst_node_t **tree, char key) {
 		return;
 	}
 
-	char currentKey = (*tree)->key;
-	bool hasLeftSubtree = (*tree)->left != NULL;
-	bool hasRightSubtree = (*tree)->right != NULL;
+	bst_node_t *currentNode = *tree;
+	bst_node_t *parentNode = NULL;
+	bool done = false;
 
-	// Zhodný kľúč - odstránenie uzla
-	if (currentKey == key) {
-		// Uzol nemá potomkov - list
-		if (!hasLeftSubtree && !hasRightSubtree) {
-			free(*tree);
-			*tree = NULL;
+	// Iteratívne nájdenie a odstránenie uzla
+	while (!done) {
+		// Prechod na neexistujúci uzol
+		if (currentNode == NULL) {
 			return;
 		}
 
-		// Uzol má jeden podstrom
-		if (hasLeftSubtree ^ hasRightSubtree) {
-			bst_node_t *temp = *tree;
-			*tree = hasLeftSubtree ? (*tree)->left : (*tree)->right;
-			free(temp);
-			return;
+		char currentKey = currentNode->key;
+		bool hasLeftSubtree = currentNode->left != NULL;
+		bool hasRightSubtree = currentNode->right != NULL;
+
+		// Zhodný kľúč - uzol nájdený
+		if (key == currentKey) {
+			bool isRoot = parentNode == NULL;
+			bool isLeftChild = parentNode != NULL && parentNode->left == currentNode;
+			bool isRightChild = parentNode != NULL && parentNode->right == currentNode;
+
+			// Uzol nemá potomkov - list
+			if (!hasLeftSubtree && !hasRightSubtree) {
+				// Odstránenie ukazateľa z rodičovského uzla
+				if (isRoot) {
+					*tree = NULL; // Žiadny rodič - odstránenie koreňa
+				} else if (isLeftChild) {
+					parentNode->left = NULL;
+				} else if (isRightChild) {
+					parentNode->right = NULL;
+				}
+
+				// Uvoľnenie pamäte odstráneného uzla
+				free(currentNode);
+			}
+
+			// Uzol má iba ľavý podstrom
+			if (hasLeftSubtree && !hasRightSubtree) {
+				// Odstránenie ukazateľa z rodičovského uzla
+				if (isRoot) {
+					*tree = currentNode->left; // Žiadny rodič - koreň
+				} else if (isLeftChild) {
+					parentNode->left = currentNode->left;
+				} else if (isRightChild) {
+					parentNode->right = currentNode->left;
+				}
+
+				// Uvoľnenie pamäte odstráneného uzla
+				free(currentNode);
+			}
+
+			// Uzol má iba pravý podstrom
+			if (!hasLeftSubtree && hasRightSubtree) {
+				// Odstránenie ukazateľa z rodičovského uzla
+				if (isRoot) {
+					*tree = currentNode->right; // Žiadny rodič - koreň
+				} else if (isLeftChild) {
+					parentNode->left = currentNode->right;
+				} else if (isRightChild) {
+					parentNode->right = currentNode->right;
+				}
+
+				// Uvoľnenie pamäte odstráneného uzla
+				free(currentNode);
+			}
+
+			// Uzol má oba podstromy
+			if (hasLeftSubtree && hasRightSubtree) {
+				// Nahradenie uzla najpravejším uzlom ľavého podstromu
+				bst_replace_by_rightmost(currentNode, &(currentNode->left));
+			}
+
+			done = true;
 		}
 
-		// Uzol má podstromy na oboch stranách
-		if (hasLeftSubtree && hasRightSubtree) {
-			bst_replace_by_rightmost(*tree, &(*tree)->left);
-			return;
+		// Prechod do pravého podstromu
+		if (key > currentKey) {
+			parentNode = currentNode;
+			currentNode = currentNode->right;
+		}
+
+		// Prechod do ľavého podstromu
+		if (key < currentKey) {
+			parentNode = currentNode;
+			currentNode = currentNode->left;
 		}
 	}
-
-	// TODO
 }
 
 /*

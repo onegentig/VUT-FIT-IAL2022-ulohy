@@ -71,14 +71,14 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#04 test_tree_insert_root
     - [X] test#06 test_tree_update_root
     - [X] test#07 test_tree_insert_many
-  - [ ] function bst_replace_by_rightmost()
-  - [ ] function bst_delete()
-    - [ ] test#10 test_tree_delete_leaf
-    - [ ] test#11 test_tree_delete_left_subtree
-    - [ ] test#12 test_tree_delete_right_subtree
-    - [ ] test#13 test_tree_delete_both_subtrees
-    - [ ] test#14 test_tree_delete_missing
-    - [ ] test#15 test_tree_delete_root
+  - [X] function bst_replace_by_rightmost()
+  - [X] function bst_delete()
+    - [X] test#10 test_tree_delete_leaf
+    - [X] test#11 test_tree_delete_left_subtree
+    - [X] test#12 test_tree_delete_right_subtree
+    - [X] test#13 test_tree_delete_both_subtrees
+    - [X] test#14 test_tree_delete_missing
+    - [X] test#15 test_tree_delete_root
   - [ ] function bst_dispose()
     - [X] test#02 test_tree_dispose_empty
     - [ ] test#16 test_tree_dispose_filled

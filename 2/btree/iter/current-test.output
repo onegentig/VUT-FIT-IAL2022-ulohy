@@ -193,8 +193,6 @@ Binary tree structure:
         |  +-[C,3]
         |  |
         +-[B,2]
-           |
-           +-[A,1]
 
 
 [test_tree_delete_left_subtree] Delete a node with only left subtree (R)
@@ -250,11 +248,9 @@ Binary tree structure:
                  |
               +-[S,10]
               |  |
-              |  +-[R,10]
+              |  +-[Q,10]
               |     |
-              |     +-[Q,10]
-              |        |
-              |        +-[P,10]
+              |     +-[P,10]
               |
            +-[O,16]
            |
@@ -334,9 +330,7 @@ Binary tree structure:
 
 Binary tree structure:
 
-                    +-[Y,10]
-                    |
-                 +-[X,10]
+                 +-[Y,10]
                  |
               +-[S,10]
               |  |
@@ -442,10 +436,8 @@ Binary tree structure:
         |  |
         |  +-[M,13]
         |
-     +-[L,12]
+     +-[K,11]
      |  |
-     |  |  +-[K,11]
-     |  |  |
      |  +-[J,10]
      |     |
      |     +-[I,9]
@@ -582,10 +574,8 @@ Binary tree structure:
      |     |
      |     +-[I,9]
      |
-  +-[H,8]
+  +-[G,7]
      |
-     |     +-[G,7]
-     |     |
      |  +-[F,6]
      |  |  |
      |  |  +-[E,5]
