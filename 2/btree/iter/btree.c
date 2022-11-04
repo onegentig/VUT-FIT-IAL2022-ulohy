@@ -2,7 +2,7 @@
  * @file iter/btree.c
  * @author Onegenimasu <https://github.com/Onegenimasu>
  * @brief Binárny vyhľadávací strom — iteratívna varianta
- * @date 2022-xx-xx
+ * @date 2022-11-04
  *
  */
 

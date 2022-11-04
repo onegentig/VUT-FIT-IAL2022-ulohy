@@ -88,7 +88,7 @@ Zadanie: [1/README.md](1/README.md), originál [MOODLE](https://moodle.vut.cz/mo
     - [X] test#18 test_tree_inorder
   - [X] function bst_postorder()
     - [X] test#19 test_tree_postorder
-- [ ] ⏰ Deadline 13.11
+- [X] ⏰ Deadline 13.11
 
 Hodnotenie: ? / ? <br>（?）
 

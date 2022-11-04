@@ -2,7 +2,7 @@
  * @file hashtable.c
  * @author Onegenimasu <https://github.com/Onegenimasu>
  * @brief Tabuľka s rozptýlenými položkami
- * @date 2022-xx-xx
+ * @date 2022-11-04
  *
  */
 
