@@ -33,21 +33,37 @@ void bst_init(bst_node_t **tree) {
  * Funkciu implementujte iteratívne bez použitia vlastných pomocných funkcií.
  */
 bool bst_search(bst_node_t *tree, char key, int *value) {
-	// Strom je prázdny
+	// Strom je prázdny - nie je kde hľadať
 	if (tree == NULL) {
 		return false;
 	}
 
-	char currentKey = tree->key;
+	bst_node_t *currentNode = tree;
+	bool found = false;
 
-	// Uzol nájdený
-	if (currentKey == key) {
-		*value = tree->value;
-		return true;
+	// Iteratívne hľadanie uzla
+	while (!found) {
+		char currentKey = tree->key;
+		bool hasLeftSubtree = currentNode->left != NULL;
+		bool hasRightSubtree = currentNode->right != NULL;
+
+		if (key == currentKey) {
+			// Zhodný kľúč - uzol nájdený
+			*value = currentNode->value;
+			found = true;
+		} else if (key < currentKey && hasLeftSubtree) {
+			// Prechod do ľavého podstromu
+			currentNode = currentNode->left;
+		} else if (key > currentKey && hasRightSubtree) {
+			// Prechod do pravého podstromu
+			currentNode = currentNode->right;
+		} else {
+			// Uzol nebol nájdený
+			break;
+		}
 	}
 
-	// TODO
-	return false;
+	return found;
 }
 
 /*
@@ -84,12 +100,11 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 
 	// Iteratívne vloženie do podstromu
 	while (!done) {
-		// Pomocné premenné
 		char currentKey = currentNode->key;
 		bool hasLeftSubtree = currentNode->left != NULL;
 		bool hasRightSubtree = currentNode->right != NULL;
 
-		// Zhodný kľúč
+		// Zhodný kľúč - uzol nájdený
 		if (key == currentKey) {
 			// Nahradenie hodnoty
 			currentNode->value = value;
@@ -97,10 +112,10 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 			done = true;
 		}
 
-		// Vloženie do ľavého podstromu
+		// Ľavý podstrom
 		if (key < currentKey) {
 			if (hasLeftSubtree) {
-				// Pokračovanie v prechádzaní ľavého podstromu
+				// Prechod do ľavého podstromu
 				currentNode = currentNode->left;
 			} else {
 				// Nájdený najľavejší uzol - vloženie
@@ -109,10 +124,10 @@ void bst_insert(bst_node_t **tree, char key, int value) {
 			}
 		}
 
-		// Vloženie do pravého podstromu
+		// Pravý podstrom
 		if (key > currentKey) {
 			if (hasRightSubtree) {
-				// Pokračovanie v prechádzaní pravého podstromu
+				// Prechod do pravého podstromu
 				currentNode = currentNode->right;
 			} else {
 				// Nájdený najpravejší uzol - vloženie
