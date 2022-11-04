@@ -42,16 +42,16 @@ void ht_init(ht_table_t *table) {
  * hodnotu NULL.
  */
 ht_item_t *ht_search(ht_table_t *table, char *key) {
-	ht_item_t *item = (*table)[get_hash(key)];
+	ht_item_t *currentItem = (*table)[get_hash(key)];
 
 	// Postupné prechádzanie zoznamu
-	while (item != NULL) {
-		if (strcmp(item->key, key) == 0) {
+	while (currentItem != NULL) {
+		if (strcmp(currentItem->key, key) == 0) {
 			// Prvok nájdený
-			return item;
+			return currentItem;
 		}
 		// Prechod na ďalší prvok
-		item = item->next;
+		currentItem = currentItem->next;
 	}
 
 	// Prvok nebol nájdený
@@ -67,11 +67,11 @@ ht_item_t *ht_search(ht_table_t *table, char *key) {
  * synonym zvoľte najefektívnejšiu možnosť a vložte prvok na začiatok zoznamu.
  */
 void ht_insert(ht_table_t *table, char *key, float value) {
-	ht_item_t *item = ht_search(table, key);
+	ht_item_t *currentItem = ht_search(table, key);
 
 	// Prepis hodnoty, pokiaľ prvok s daným kľúčom už existuje
-	if (item != NULL) {
-		item->value = value;
+	if (currentItem != NULL) {
+		currentItem->value = value;
 		return;
 	}
 
@@ -119,29 +119,29 @@ float *ht_get(ht_table_t *table, char *key) {
  */
 void ht_delete(ht_table_t *table, char *key) {
 	int hash = get_hash(key);
-	ht_item_t *item = (*table)[hash];
-	ht_item_t *parent = NULL;
+	ht_item_t *currentItem = (*table)[hash];
+	ht_item_t *parentItem = NULL;
 
 	bool found = false;
-	while (item != NULL && !found) {
+	while (currentItem != NULL && !found) {
 		// Prvok nájdený
-		if (strcmp(item->key, key) == 0) {
-			if (parent == NULL) {
+		if (strcmp(currentItem->key, key) == 0) {
+			if (parentItem == NULL) {
 				// Prvok je na začiatku zoznamu
-				(*table)[hash] = item->next;
+				(*table)[hash] = currentItem->next;
 			} else {
 				// Prvok je na konci alebo uprostred zoznamu
-				parent->next = item->next;
+				parentItem->next = currentItem->next;
 			}
 
 			// Uvoľnenie pamäte prvku
-			free(item);
+			free(currentItem);
 			return;
 		}
 
 		// Prechod na ďalší prvok
-		parent = item;
-		item = item->next;
+		parentItem = currentItem;
+		currentItem = currentItem->next;
 	}
 }
 
@@ -153,19 +153,19 @@ void ht_delete(ht_table_t *table, char *key) {
  */
 void ht_delete_all(ht_table_t *table) {
 	for (int i = 0; i < HT_SIZE; i++) {
-		ht_item_t *item = (*table)[i];
+		ht_item_t *currentItem = (*table)[i];
 
 		// Žiaden prvok k indexu neexistuje
-		if (item == NULL) {
+		if (currentItem == NULL) {
 			continue;
 		}
 
 		// Postupné odstraňovanie a uvoľňovanie pamäte prvkov
-		ht_item_t *nextItem = item->next;
-		while (nextItem != NULL) {
-			item = nextItem;
-			nextItem = item->next;
-			free(item);
+		ht_item_t *nextItem;
+		while (currentItem != NULL) {
+			nextItem = currentItem->next;
+			free(currentItem);
+			currentItem = nextItem;
 		}
 
 		// Odstránenie ukazateľa na prvok
