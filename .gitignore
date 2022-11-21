@@ -1,8 +1,0 @@
-.vscode
-*.o
-*.backup
-*-backup*
-*-test*
-!current-test.output
-!hashtable-test.output
-!btree-test.output
