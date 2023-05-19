@@ -1,6 +1,6 @@
 /**
  * @file iter/btree.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Binárny vyhľadávací strom — iteratívna varianta
  * @date 2022-11-04
  *

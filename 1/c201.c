@@ -1,6 +1,6 @@
 /**
  * @file c201.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Implementácia jednosmerného zoznamu (Singly-Linked List ADT)
  * @date 2022-10-12
  *

@@ -1,6 +1,6 @@
 /**
  * @file hashtable.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Tabuľka s rozptýlenými položkami
  * @date 2022-11-04
  *

@@ -1,6 +1,6 @@
 /**
  * @file c206.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Implementácia dvojsmerného zoznamu (Doubly-Linked List ADT)
  * @date 2022-10-12
  *

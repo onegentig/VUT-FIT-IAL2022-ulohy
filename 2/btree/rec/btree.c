@@ -1,6 +1,6 @@
 /**
  * @file rec/btree.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Binárny vyhľadávací strom — rekurzívna varianta
  * @date 2022-11-04
  *

@@ -20,3 +20,4 @@ Zadanie: [2/README.md](2/README.md), originál [MOODLE](https://moodle.vut.cz/mo
 
 * [Test-Skript](https://discord.com/channels/461541385204400138/591341359068217354/908703762833629264)
 * [Príkaz tar](https://discord.com/channels/461541385204400138/591341359068217354/905371590315884554)
+

@@ -1,6 +1,6 @@
 /**
  * @file c203.c
- * @author Onegenimasu <https://github.com/Onegenimasu>
+ * @author Onegen Something <xkrame00@vutbr.cz>
  * @brief Implementácia fronty znakov v poli (Character Queue Array ADT)
  * @date 2022-10-12
  *
